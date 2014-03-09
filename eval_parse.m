@@ -1,4 +1,4 @@
-% clc; close all; clear;
+clc; close all; clear;
 % globals;
 name = 'PARSE';
 % --------------------
