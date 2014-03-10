@@ -1,4 +1,4 @@
-function boxes = testmodel(name,model,test,suffix,imoption)
+function boxes = testmodel_par(name,model,test,suffix,imoption,poolsize)
 % boxes = testmodel(name,model,test,suffix)
 % Returns candidate bounding boxes after non-maximum suppression
 if nargin < 5
@@ -7,11 +7,22 @@ end
 
 globals;
 
+switch imoption
+    case 0
+        savename = [cachedir name '_boxes_' suffix];
+    case 1
+        savename = [cachedir name '_boxes_' suffix '_new'];
+end
+
+set(findResource(), 'ClusterSize', 12);
+matlabpool('open',poolsize);
+pctRunOnAll warning off
+
 try
-  load([cachedir name '_boxes_' suffix]);
+  load(savename);
 catch
   boxes = cell(1,length(test));
-  for i = 1:length(test)
+  parfor i = 1:length(test)
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
     switch imoption
@@ -26,10 +37,5 @@ catch
   if nargin < 4
     suffix = [];
   end
-  switch imoption
-      case 0
-          save([cachedir name '_boxes_' suffix], 'boxes','model');
-      case 1
-          save([cachedir name '_boxes_' suffix '_new'], 'boxes','model');
-  end
+  save(savename, 'boxes','model');
 end

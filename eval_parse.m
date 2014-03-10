@@ -29,7 +29,9 @@ load('20120515-pose-release-ver1.3/code-basic/PARSE_model.mat');
 % human detection + pose estimation
 suffix = num2str(K')';
 model.thresh = min(model.thresh,-2);
-boxes = testmodel(name,model,test,suffix);
+% boxes = testmodel(name,model,test,suffix);
+% new + par
+boxes = testmodel_par(name,model,test,suffix,1,12);
 % --------------------
 % evaluation 1: average precision of keypoints
 % You will need to write your own APK evaluation code for your data structure
