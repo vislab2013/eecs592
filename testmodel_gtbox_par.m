@@ -45,3 +45,5 @@ catch
   end
   save(savename, 'boxes','model');
 end
+
+matlabpool close
