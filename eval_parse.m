@@ -44,7 +44,9 @@ fprintf('APK       '); fprintf('& %.1f ',apk*100); fprintf('\n');
 % testing phase 2
 % pose estimation given ground truth human box
 model.thresh = min(model.thresh,-2);
-boxes_gtbox = testmodel_gtbox(name,model,test,suffix);
+% boxes_gtbox = testmodel_gtbox(name,model,test,suffix);
+% new + par
+boxes_gtbox = testmodel_gtbox_par(name,model,test,suffix,1,12);
 % --------------------
 % evaluation 2: percentage of correct keypoints
 % You will need to write your own PCK evaluation code for your data structure
