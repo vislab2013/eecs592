@@ -25,7 +25,7 @@ try
   load(savename);
 catch
   boxes = cell(1,length(test));
-  for i = 1:length(test)
+  parfor i = 1:length(test)
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
     switch imoption
