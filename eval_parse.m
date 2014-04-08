@@ -1,4 +1,5 @@
 clc; close all; clear;
+imoption = 0;
 % globals;
 name = 'PARSE';
 % --------------------
@@ -31,7 +32,7 @@ suffix = num2str(K')';
 model.thresh = min(model.thresh,-2);
 % boxes = testmodel(name,model,test,suffix);
 % new + par
-boxes = testmodel_par(name,model,test,suffix,1,12);
+boxes = testmodel_par(name,model,test,suffix,1,1);
 % --------------------
 % evaluation 1: average precision of keypoints
 % You will need to write your own APK evaluation code for your data structure
@@ -46,7 +47,7 @@ fprintf('APK       '); fprintf('& %.1f ',apk*100); fprintf('\n');
 model.thresh = min(model.thresh,-2);
 % boxes_gtbox = testmodel_gtbox(name,model,test,suffix);
 % new + par
-boxes_gtbox = testmodel_gtbox_par(name,model,test,suffix,1,12);
+boxes_gtbox = testmodel_gtbox_par(name,model,test,suffix,1,1);
 % --------------------
 % evaluation 2: percentage of correct keypoints
 % You will need to write your own PCK evaluation code for your data structure
@@ -57,20 +58,49 @@ fprintf('Keypoints & Head & Shou & Elbo & Wris & Hip  & Knee & Ankle\n');
 fprintf('PCK       '); fprintf('& %.1f ',pck*100); fprintf('\n');
 % --------------------
 % visualization
-figure(1);
-visualizemodel(model);
-figure(2);
-visualizeskeleton(model);
-demoimid = 1;
-im = imread(test(demoimid).im);
-colorset = {'g','g','y','r','r','r','r','y','y','y','m','m','m','m','y','b','b','b','b','y','y','y','c','c','c','c'};
-box = boxes{demoimid};
-% show all detections
-figure(3);
-subplot(1,2,1); showboxes(im,box,colorset);
-subplot(1,2,2); showskeletons(im,box,colorset,model.pa);
-% show best detection overlap with ground truth box
-box = boxes_gtbox{demoimid};
-figure(4);
-subplot(1,2,1); showboxes(im,box,colorset);
-subplot(1,2,2); showskeletons(im,box,colorset,model.pa);
+if(1)
+    % figure(1);
+    % visualizemodel(model);
+    % figure(2);
+    % visualizeskeleton(model);
+    switch imoption
+        case 0
+            det_dir = 'result/pretr_detect_fast/';
+            det_gt_dir = 'result/pretr_detect_gt_fast/';
+        case 1
+            det_dir = 'result/pretr_detect_new/';
+            det_gt_dir = 'result/pretr_detect_gt_new/';
+    end
+    makedir(det_dir);
+    makedir(det_gt_dir);
+    figure;
+    for demoimid = 1:length(test)
+        tic_print(sprintf('  %3d/%3d\n',demoimid,length(test)));
+        % demoimid = 1;
+        im = imread(test(demoimid).im);
+        colorset = {'g','g','y','r','r','r','r','y','y','y','m','m','m','m','y','b','b','b','b','y','y','y','c','c','c','c'};
+        box = boxes{demoimid};
+        % show all detections
+        % figure(3);
+        % subplot(1,2,1); showboxes(im,box,colorset);
+        % subplot(1,2,2); showskeletons(im,box,colorset,model.pa);
+        clf; showboxes(im,box,colorset);
+        savename = [det_dir 'img' num2str(demoimid,'%04d') '_1.pdf'];
+        print(gcf,'-dpdf',savename);
+        clf; showskeletons(im,box,colorset,model.pa);
+        savename = [det_dir 'img' num2str(demoimid,'%04d') '_2.pdf'];
+        print(gcf,'-dpdf',savename);
+        % show best detection overlap with ground truth box
+        box = boxes_gtbox{demoimid};
+        % figure(4);
+        % subplot(1,2,1); showboxes(im,box,colorset);
+        % subplot(1,2,2); showskeletons(im,box,colorset,model.pa);
+        clf; showboxes(im,box,colorset);
+        savename = [det_gt_dir 'img' num2str(demoimid,'%04d') '_1.pdf'];
+        print(gcf,'-dpdf',savename);
+        clf; showskeletons(im,box,colorset,model.pa);
+        savename = [det_gt_dir 'img' num2str(demoimid,'%04d') '_2.pdf'];
+        print(gcf,'-dpdf',savename);
+    end
+    close;
+end
