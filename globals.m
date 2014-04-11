@@ -10,8 +10,11 @@ elseif ispc()
   addpath 20120515-pose-release-ver1.3/code-full/mex_pc/;
 end
 
+global tname;
+
 % directory for caching models, intermediate data, and results
-cachedir = 'cache/';
+% cachedir = 'cache/';
+cachedir = ['cache_' tname '/'];
 if ~exist(cachedir,'dir')
   mkdir(cachedir);
 end

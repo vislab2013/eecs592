@@ -12,6 +12,8 @@ I = find(qp.sv > 0);
 n = length(I);
 assert(n > 0);
 
+% qp.l: l(\alpha) in Ramanan's paper
+% qp.w: \omega(\alpha) in Ramanan's paper
 qp.l = 0;
 qp.w = zeros(size(qp.w));
 k    = length(qp.w);
@@ -27,6 +29,7 @@ for j = 1:n,
   qp.w = qp.w + sparse2dense(qp.x(:,j),k)*qp.a(j);
 end
 
+% qp.lb: LB in Ramanan's paper
 qp.sv(1:n)     = 1;
 qp.sv(n+1:end) = 0;
 qp.a(n+1:end)  = 0;

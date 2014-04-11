@@ -18,6 +18,7 @@
 function qp_write(ex)
   global qp;
   
+  % if reach maximum constraint number
   if qp.n == length(qp.a),
     return;
   end
@@ -35,8 +36,8 @@ function qp_write(ex)
   assert(~any(is(2:end) == is(1:end-1)));
    
   % Sparsely compute these 3 quantities 
-  % x    = C*(label*feat ./ qp.wreg)  
-  % bias = C*(1 - qp.w0'*label*feat)
+  % x    = C*(label*feat ./ qp.wreg)  -> \hat{x}_ij in Ramanan's paper  
+  % bias = C*(1 - qp.w0'*label*feat)  -> \hat{l}_ij in Ramanan's paper
   % norm = x'*x
   bias = 1;
   norm = 0;

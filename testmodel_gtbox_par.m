@@ -1,16 +1,19 @@
-function boxes = testmodel_gtbox_par(name,model,test,suffix,imoption,poolsize)
+function boxes = testmodel_gtbox_par(name,model,test,suffix,ioption,poolsize)
 % boxes = testmodel_gtbox(name,model,test,suffix)
 % Returns highest scoring pose that sufficiently overlaps a detection window
 % 1) Construct ground-truth bounding box
 % 2) Compute all candidates that sufficiently overlap it
 % 3) Return highest scoring one  
 if nargin < 5
-    imoption = 1;
+    ioption = 1;
+end
+if nargin < 6
+    poolsize = 12;
 end
 
 globals;
 
-switch imoption
+switch ioption
     case 0
         savename = [cachedir name '_boxes_gtbox_' suffix];
     case 1
@@ -28,7 +31,7 @@ catch
   parfor i = 1:length(test)
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
-    switch imoption
+    switch ioption
         case 0
             box = detect_fast(im,model,model.thresh);
         case 1

@@ -10,18 +10,22 @@ elseif ispc()
   addpath 20120515-pose-release-ver1.3/code-full/mex_pc/;
 end
 
-% directory for caching models, intermediate data, and results
-cachedir = 'cache/';
-if ~exist(cachedir,'dir')
-    mkdir(cachedir);
-end
-
-if ~exist([cachedir 'imrotate/'],'dir')
-    mkdir([cachedir 'imrotate/']);
-end
-
-if ~exist([cachedir 'imflip/'],'dir')
-    mkdir([cachedir 'imflip/']);
-end
+% % directory for caching models, intermediate data, and results
+% cachedir = 'cache/';
+% if ~exist(cachedir,'dir')
+%     mkdir(cachedir);
+% end
+% 
+% if ~exist([cachedir 'imrotate/'],'dir')
+%     mkdir([cachedir 'imrotate/']);
+% end
+% 
+% if ~exist([cachedir 'imflip/'],'dir')
+%     mkdir([cachedir 'imflip/']);
+% end
 
 % addpath BUFFY;
+
+addpath('data_annotation/');
+addpath('data_collection/');
+addpath('learning/');

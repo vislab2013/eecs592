@@ -1,13 +1,16 @@
-function boxes = testmodel_par(name,model,test,suffix,imoption,poolsize)
+function boxes = testmodel_par(name,model,test,suffix,ioption,poolsize)
 % boxes = testmodel(name,model,test,suffix)
 % Returns candidate bounding boxes after non-maximum suppression
 if nargin < 5
-    imoption = 1;
+    ioption = 1;
+end
+if nargin < 6
+    poolsize = 12;
 end
 
 globals;
 
-switch imoption
+switch ioption
     case 0
         savename = [cachedir name '_boxes_' suffix];
     case 1
@@ -25,7 +28,7 @@ catch
   parfor i = 1:length(test)
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
-    switch imoption
+    switch ioption
         case 0
             box = detect_fast(im,model,model.thresh);
         case 1

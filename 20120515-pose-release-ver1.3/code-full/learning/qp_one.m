@@ -2,8 +2,8 @@
 function qp_one
   global qp
 
-  MEX = true;
-  %MEX = false;
+  %MEX = true;
+  MEX = false;
   
   % Random ordering of support vectors
   I = find(qp.sv);
@@ -45,6 +45,8 @@ function qp_one
     assert(all(idC <= C+1e-5));
     assert(all(idC >= 0-1e-5));
     
+    % Ci: \alpha_i in Ramanan's paper
+    % G:  -g_ij in Ramanan's paper
     for t = 1:n,
       i  = I(t);
       j  = idP(t);

@@ -1,5 +1,9 @@
 clc; close all; clear;
-imoption = 0;
+% setting
+toption = 2;
+ioption = 0;
+poolsize = 12;
+global tname; tname = ['t' num2str(toption,'%02d')];
 % globals;
 name = 'PARSE';
 % --------------------
@@ -22,9 +26,7 @@ pos = point2box(pos,pa);
 % --------------------
 % % training
 % model = trainmodel(name,pos,neg,K,pa,sbin);
-% --------------------
-% load model
-load('20120515-pose-release-ver1.3/code-basic/PARSE_model.mat');
+model = trainmodel(name,pos,neg,K,pa,sbin,toption);
 % --------------------
 % testing phase 1
 % human detection + pose estimation
@@ -32,7 +34,7 @@ suffix = num2str(K')';
 model.thresh = min(model.thresh,-2);
 % boxes = testmodel(name,model,test,suffix);
 % new + par
-boxes = testmodel_par(name,model,test,suffix,1,1);
+boxes = testmodel_par(name,model,test,suffix,ioption,poolsize);
 % --------------------
 % evaluation 1: average precision of keypoints
 % You will need to write your own APK evaluation code for your data structure
@@ -47,7 +49,7 @@ fprintf('APK       '); fprintf('& %.1f ',apk*100); fprintf('\n');
 model.thresh = min(model.thresh,-2);
 % boxes_gtbox = testmodel_gtbox(name,model,test,suffix);
 % new + par
-boxes_gtbox = testmodel_gtbox_par(name,model,test,suffix,1,1);
+boxes_gtbox = testmodel_gtbox_par(name,model,test,suffix,ioption,poolsize);
 % --------------------
 % evaluation 2: percentage of correct keypoints
 % You will need to write your own PCK evaluation code for your data structure
@@ -63,7 +65,7 @@ if(1)
     % visualizemodel(model);
     % figure(2);
     % visualizeskeleton(model);
-    switch imoption
+    switch ioption
         case 0
             det_dir = 'result/pretr_detect_fast/';
             det_gt_dir = 'result/pretr_detect_gt_fast/';

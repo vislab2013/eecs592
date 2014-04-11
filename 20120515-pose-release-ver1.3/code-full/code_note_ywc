@@ -1,0 +1,14 @@
+model
+  .bias
+    .w      bias value
+    .i      start index of feature vector (v: 1)
+  .filters
+    .w      filters (s: 5x5x32)
+    .i      start index of feature vector (v: 2)
+  .len      length of single part HOG feature
+            part training: s: 1+5x5x32 = 801
+            full training: s: (1+5x5x32x6)+(36+5x5x32x6+4x6)x25
+
+len (sparselen)
+    part training: s:
+    full training: s: 1 + (1+1)+(1+1+1)x25 x 2 + (1+5x5x32)+(1+5x5x32+4)x25
