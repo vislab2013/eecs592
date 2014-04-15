@@ -1,0 +1,24 @@
+\section{Estimating Room Layout}
+\label{sec:2}
+
+We follow \cite{Hedau_ICCV2009} to model the room by a 3D box. In each scene, we can observe at most five faces of the box model: floor, ceiling, and left, center, right walls. Following the Manhattan world assumption, each pair of the faces are either parallel or perpendicular to each other in 3D. The projection of each of these faces on the image are polygons, as shown in Fig. \ref{fig:f2}. The goal of layout estimation is to identify the boundaries between two faces, i.e. edges of polygons, within the image, and the recover the 3D box structure of the room.
+
+Our approach follow the procedure of \cite{Hedau_ICCV2009,Lee_CVPR2009} to generate the layout of the room. First, we estimate the three orthogonal vanishing points of the box to get the box orientation (Sec. \ref{sec:3}). Different from \cite{Hedau_ICCV2009}, which estimate the vanishing points completely from 2D image features, i.e. line segments, our method exploits the 3D geometric relationship between human and the box, which jointly infers the vanishing points, camera pose and height, and human 3D locations. Next, we generate layout hypotheses by translating and scaling the faces of the box, and solve the best candidate layout based on \cite{Hedau_ICCV2009} (Sec. \ref{sec:4}).
+
+\begin{figure}[t]
+  \centering
+  \hspace{-7mm}
+  \begin{subfigure}[b]{0.21\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/fig2-1.jpg}
+    \label{fig:f2_1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.21\textwidth}
+    \centering
+    \includegraphics[width=1.13\textwidth]{figure/fig2-2.jpg}
+    \label{fig:f2_2}
+  \end{subfigure}
+  \caption{Estimation room layouts.}
+  \label{fig:f2}
+\end{figure}

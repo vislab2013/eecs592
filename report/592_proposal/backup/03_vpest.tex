@@ -1,0 +1,31 @@
+\section{Vanishing Point Estimation from Human Detection and 3D Geometric Information}
+\label{sec:3}
+
+We propose a unified framework estimating three orthogonal vanishing points using candidate human bounding boxes and 3D geometric relationships. We first introduce our energy maximization framework in Sec. \ref{sec:3-1}. Then we detail each component of our model in Sec. \ref{sec:3-2}. We will describe how we solve the optimization in Sec. \ref{sec:3-3}.
+
+\subsection{The Model}
+\label{sec:3-1}
+% Energy minimization\\
+Given an observed image $I$, our goal is to jointly estimate human location $H$ and scene information $S$. Denote scene information $S = \{f,\phi,\psi,\omega,h\}$, where $f$ is the camera focal length, $\phi$, $\psi$, $\omega$ is the pitch, yaw, roll angle of the camera, and $h$ is the camera height. Note that the coordinates of three orthogonal vanishing points can be uniquely determined by $S = \{f,\phi,\psi,\omega\}$, and vice versa \cite{Hartley2004}. Suppose we obtain $N$ candidate human detections from the detector, we can denote  $H = \{H_i | i = 1,\dots,N\} = \{b_i, t_i | i = 1,\dots,N\}$, where $b_i$ is the detection bounding box and $t_i$ is the true positive flag of the $i$th candidate detection. We formulate the estimation of $H$ and $S$ as an energy maximization framework:
+\begin{equation}
+\begin{split}
+  E(S,H,I) & = \alpha\Psi(S,H) + \beta\Psi(I,H) +\gamma\Psi(I,S) \\
+           % & = \alpha\frac{1}{N}\sum_{i=1}^N\Psi(S,H_i) + \beta\frac{1}{N}\sum_{i=1}^N\Psi(I,H_i) + \gamma\Psi(I,S),
+\end{split}
+\end{equation}
+where $\Psi(S,H)$ accounts for the compatibility between the scene hypothesis and human locations, $\Psi(I,H)$ measures the compatibility between the observed image and human locations, and $\Psi(I,S)$ measures the compatibility between the observed image and the scene hypothesis. $\alpha$, $\beta$, and $\gamma$ are the model parameters that weight each component.
+
+\subsection{Model Characteristics}
+\label{sec:3-2}
+% Explain each term in detail\\
+Now we explain each component of the model. Note that we assume the human positions are independent in the scene.
+
+$\Psi(S,H) = \frac{1}{N}\sum_{i=1}^N\Psi(S,H_i)$ measure how likely the candidate detections to be a true positives with the scene information $S$. Given $S$, we first back-project the $i$th human detections onto the ground plane, assuming the human and the ground plane have the same normal. Denote the $g_i$ to be the 3D height of the $i$th candidate detection, we define $\Psi(S,H_i) = \ln\mathcal{N}(g_i-\mu_g,\sigma_g)$.
+
+$\Psi(I,H) = \frac{1}{N}\sum_{i=1}^N\Psi(I,H_i)$ and we define $\Psi(I,H_i)$ to be the confidence of the $i$th candidate detection returned by the human detector.
+
+$\Psi(I,S)$ measures the coherence between the observed line features and the vanishing points computed from scene hypothesis. As in \cite{Hedau_ICCV2009}, we first detect long straight lines in the image, then we compute the votes of each vanishing point from the lines using the exponential voting scheme. $\Psi(I,S)$ is set to be the sum of votes of three vanishing points.
+
+\subsection{Solving Optimization}
+\label{sec:3-3}
+Since we explicitly model the camera and scene parameters, we can discretize the possible range of the parameter space, and enumerate through all the values for the optimum parameters. We will show that using a coarse discretization, our method is computational feasible, and outperforms the state-of-the-art approach in vanishing point estimation.

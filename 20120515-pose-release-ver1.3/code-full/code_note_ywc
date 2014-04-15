@@ -12,3 +12,7 @@ model
 len (sparselen)
     part training: s:
     full training: s: 1 + (1+1)+(1+1+1)x25 x 2 + (1+5x5x32)+(1+5x5x32+4)x25
+
+- Each detection is a data point (either in pos or in neg). Each detection
+  has its id. Thus there are no two data point with same id. The first 
+  condition in Algorithm 1 (in Ramanan's paper) is never reached.

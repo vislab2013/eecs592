@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: egpaper_final.aux
+The style file: ieee.bst
+Database file #1: egbib.bib
+You've used 5 entries,
+            2120 wiz_defined-function locations,
+            531 strings with 4842 characters,
+and the built_in function-call counts, 1849 in all, are:
+= -- 163
+> -- 115
+< -- 0
++ -- 45
+- -- 40
+* -- 141
+:= -- 318
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 35
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 64
+empty$ -- 143
+format.name$ -- 40
+if$ -- 372
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 43
+preamble$ -- 1
+purify$ -- 30
+quote$ -- 0
+skip$ -- 37
+stack$ -- 0
+substring$ -- 87
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 0
+while$ -- 14
+width$ -- 6
+write$ -- 54

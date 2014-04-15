@@ -1,0 +1,32 @@
+\section{Introduction}
+% Scene understanding/layout Estimation
+Enabling machines to understand the visual scenes has been a major problem of computer vision research. Recently there has been a significant amount of works focusing on solving the spatial layouts of indoor scenes \cite{Hedau_ICCV2009,Lee_NIPS2010,Lee_CVPR2009,Schwing_CVPR2012,Wang_ECCV2010}. Estimating indoor spatial layouts leads to numerous applications, including robot navigation and scene recognition. Given an image of a room, as shown in Fig. \ref{fig:f1}, we want the computer to automatically identify the extent the floor, walls, and the ceiling (labeled by blue lines). \cite{Lee_CVPR2009} relies on the robust detection of straight lines to recover the boundaries between these planar surfaces. However, these boundaries are no longer observable if the scene is cluttered, as shown in Fig \ref{fig:f1}. To recover the spatial layout of cluttered rooms, \cite{Hedau_ICCV2009} jointly models the cluttered regions and the box model.
+
+%Consider the image shown in Fig. \ref{fig:f1}, recent works on indoor scene understanding have focused on the following two tasks: 1) detecting semantic objects in the scene, such as furniture and human (red and green boxes), and 2) estimating the spatial layout (blue lines) \cite{Hedau_ICCV2009,Lee_NIPS2010,Lee_CVPR2009}.
+
+% Object detection
+Object detection is widely used for boosting the performance of scene understanding \cite{Bao_CVPR2010,Lee_NIPS2010}. \cite{Bao_CVPR2010} attempts to use the 3D locations of detected objects to help estimating the geometric properties of the scene. \cite{Lee_NIPS2010} explicitly models the relationship between the objects presented in the scene and the scene layout. However, in highly cluttered indoor scenes, object detections are often suffered by truncations and occlusions. As shown in Fig \ref{fig:f1} (red boxes), the dining table in the middle is partially occluded by the people in the front, while the chairs behind the dining table is almost non-visible due to the occlusion of the dining table and the people sitting on it. Furthermore, the chairs in the front are truncated by the image boundary. Objects cannot be robustly detected in these cases.
+
+Thanks for the recent advances in human pose estimation and detection, human, as shown in Fig \ref{fig:f1} (green boxes) can be detected more robustly than objects in these circumstances. In this paper, we exploit human detection and 3D geometric information to solve the 3D layout of indoor scenes that is highly cluttered by objects and human.
+
+% Contribution
+\textbf{Contributions:} 1) we propose an unified framework for estimating three principle vanishing points of an indoor scene using human detection and 3D geometric information, 2) we propose a indoor scene dataset composed of images which are highly cluttered by objects and human, along with the annotations of layouts, objects, and human, and 3) we evaluate our method on the proposed dataset, and show state-of-the-art performance in vanishing point estimation and scene layout estimation.
+
+The remaining of the proposal is organized as follows: Sec. \ref{sec:2} reviews the overall framework of our layout estimation method. We detail our proposed vanishing point estimation approach in Sec. \ref{sec:3}. Once we get three orthogonal vanishing points, we generate the candidate layouts and solve for the best, as described in Sec. \ref{sec:4} Sec. \ref{sec:5} presents the experimental design that we plan to perform. The milestones are listed in Sec. \ref{sec:6}.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{0.23\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/fig1-1.pdf}
+    \label{fig:f1_1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.23\textwidth}
+    \centering
+    \includegraphics[width=1.05\textwidth]{figure/fig1-2.pdf}
+    \label{fig:f1_2}
+  \end{subfigure}
+  \caption{In images of cluttered rooms, objects (red boxes) such as dining tables and chairs often suffer from occlusion and truncation, which are less robust to detect. We use the robustly detected human (green boxes) to jointly estimate the 3D box layout (blue lines) and human in their 3D locations.}
+  \label{fig:f1}
+\end{figure}
