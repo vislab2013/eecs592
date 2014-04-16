@@ -1,8 +1,8 @@
 clc; close all; clear;
 % setting
 toption = 1;
-ioption = 1;
-poolsize = 8;
+ioption = 10;
+poolsize = 1;
 global tname; tname = ['t' num2str(toption,'%02d') 'i' num2str(ioption,'%02d')];
 % globals;
 name = 'PARSE';
@@ -21,7 +21,7 @@ sbin = 4;
 % --------------------
 % Prepare training and testing images and part bounding boxes
 % You will need to write custom *_data() functions for your own dataset
-[pos neg test] = PARSE_data(name);
+[pos neg test] = PARSE_data(name,toption,ioption);
 pos = point2box(pos,pa);
 % --------------------
 % % training

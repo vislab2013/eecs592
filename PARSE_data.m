@@ -1,4 +1,4 @@
-function [pos neg test] = PARSE_data(name)
+function [pos neg test] = PARSE_data(name,toption,ioption)
 % this function is very dataset specific, you need to modify the code if
 % you want to apply the pose algorithm on some other dataset
 
@@ -105,13 +105,26 @@ catch
 
   % -------------------
   % grab testing image information 
-  testims = '20120515-pose-release-ver1.3/code-full/PARSE/im%.4d.jpg';
-  test = [];
-  numtest = 0;
-  for fr = testfrs_pos
-    numtest = numtest + 1;
-    test(numtest).im = sprintf(testims,fr);
-    test(numtest).point = ptsAll(:,:,fr);
+  if ioption~=10 && ioption~=11
+      testims = '20120515-pose-release-ver1.3/code-full/PARSE/im%.4d.jpg';
+      test = [];
+      numtest = 0;
+      for fr = testfrs_pos
+          numtest = numtest + 1;
+          test(numtest).im = sprintf(testims,fr);
+          test(numtest).point = ptsAll(:,:,fr);
+      end
+  else
+      load data_annotation/labels.mat;
+      testims = 'data_collection/processed/im%.4d.jpg';
+      testfrs_pos = 1:70;
+      test = [];
+      numtest = 0;
+      for fr = testfrs_pos
+          numtest = numtest + 1;
+          test(numtest).im = sprintf(testims,fr);
+          test(numtest).point = ptsAll(:,:,fr);
+      end
   end
   
   save([cachedir cls],'pos','neg','test');

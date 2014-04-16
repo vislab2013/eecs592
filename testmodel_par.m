@@ -11,9 +11,9 @@ end
 globals;
 
 switch ioption
-    case 0
+    case {0,10}
         savename = [cachedir name '_boxes_' suffix];
-    case 1
+    case {1,11}
         savename = [cachedir name '_boxes_' suffix '_new'];
 end
 
@@ -29,9 +29,9 @@ catch
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
     switch ioption
-        case 0
+        case {0,10}
             box = detect_fast(im,model,model.thresh);
-        case 1
+        case {1,11}
             box = detect_new(im,model,model.thresh);
     end
     boxes{i} = nms(box,0.3);

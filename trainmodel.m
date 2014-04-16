@@ -72,6 +72,10 @@ catch
     save([cachedir cls],'model');
 end
 
+if toption == 2
+    return
+end
+
 % post-processing
 cls = [name '_final_' num2str(K')'];
 try
