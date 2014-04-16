@@ -5,7 +5,7 @@ function qp_opt_ywc( )
 global trparam;
 global qp;
 
-% qp_refresh();
+qp_refresh();
 
 I = 1:qp.n;
 [si,J] = sortrows(qp.i(:,I)');
@@ -17,12 +17,12 @@ slack = qp.b(I) - score(qp.w,single(qp.x),I);
 loss  = computeloss(slack(J),eqid);
 ub    = 0.5*dot(qp.w,qp.w) + loss;
 lb    = qp.lb;
-%qp.sv
 fprintf('LB=%.4f, UB=%.4f\n',lb,ub);
 
+qp.sv(I) = 1;
 for i = 1:trparam.qp_iter
-    %qp_onepass_ywc();
-    qp_one();
+    qp_onepass_ywc();
+    %qp_one();
     fprintf('.');
     if mod(i,200) == 0
         fprintf('\n');
@@ -38,7 +38,7 @@ for i = 1:trparam.qp_iter
         if ub - lb < trparam.qp_tol * ub
             break
         end
-        %qp.sv
+        qp.sv(I) = 1;
     end
 end
 

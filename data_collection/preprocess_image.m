@@ -1,11 +1,37 @@
+%% rename
 clear;
 
-rotate_id = [1 2];
+imdir = 'raw/';
+EXT   = {'.JPG','.jpg'};
+
+opdir = 'raw_rename/';
+if ~exist(opdir,'dir')
+    mkdir(opdir);
+end
+
+cnt = 1;
+for e = 1:length(EXT)
+    ext = EXT{e};
+    list  = dir([imdir '*' ext]);
+    for i = 1:length(list)
+        fprintf('  %3d/%3d\n',i,length(list));
+        im = imread([imdir list(i).name]);
+        savename = [opdir 'im' num2str(cnt,'%04d'),'.jpg'];
+        imwrite(im,savename,'jpg');
+        cnt = cnt + 1;
+    end
+end
+
+%%
+% rotate_id = [5 6 9 10 12 16 20 21 23 24 25 26 27 29 30 34 36 37 38 39 40 ...
+%     41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 58 59 60 61 63];
+rotate_id = [3 6 7 9 15 16 17 18 19 20 21 22 24 25 26 27 28 29 30 ...
+    31 32 33 34 35 36 37 38 39 40 41 42 43 44 47 48 49 51];
 
 max_length = [480 480];
 
-imdir = 'raw/';
-ext   = '.JPG';
+imdir = 'raw_rename/';
+ext   = '.jpg';
 list  = dir([imdir '*' ext]);
 
 savedir = 'processed/';

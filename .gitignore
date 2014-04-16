@@ -1,0 +1,7 @@
+cache*
+data_annotation/anno_vis/
+data_annotation/annotation/
+data_collection/processed/
+data_collection/raw/
+data_collection/raw_rename/
+

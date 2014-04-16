@@ -1,9 +1,9 @@
 clc; close all; clear;
 % setting
-toption = 2;
-ioption = 0;
-poolsize = 12;
-global tname; tname = ['t' num2str(toption,'%02d')];
+toption = 1;
+ioption = 1;
+poolsize = 8;
+global tname; tname = ['t' num2str(toption,'%02d') 'i' num2str(ioption,'%02d')];
 % globals;
 name = 'PARSE';
 % --------------------
@@ -65,14 +65,16 @@ if(1)
     % visualizemodel(model);
     % figure(2);
     % visualizeskeleton(model);
-    switch ioption
-        case 0
-            det_dir = 'result/pretr_detect_fast/';
-            det_gt_dir = 'result/pretr_detect_gt_fast/';
-        case 1
-            det_dir = 'result/pretr_detect_new/';
-            det_gt_dir = 'result/pretr_detect_gt_new/';
-    end
+    % switch ioption
+    %     case 0
+    %         det_dir = 'result/pretr_detect_fast/';
+    %         det_gt_dir = 'result/pretr_detect_gt_fast/';
+    %     case 1
+    %         det_dir = 'result/pretr_detect_new/';
+    %         det_gt_dir = 'result/pretr_detect_gt_new/';
+    % end
+    det_dir = ['result/vis_' tname '/'];
+    det_gt_dir = ['result/vis_gt_' tname '/'];
     makedir(det_dir);
     makedir(det_gt_dir);
     figure;

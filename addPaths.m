@@ -28,4 +28,5 @@ end
 
 addpath('data_annotation/');
 addpath('data_collection/');
+addpath('detection/');
 addpath('learning/');

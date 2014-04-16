@@ -80,7 +80,14 @@ catch
     if isfield(pos,'mix')
         pos = rmfield(pos,'mix');
     end
-    model = train(cls,model,pos,neg,0,1);
+    switch toption
+        case 1
+            % original training
+            model = train(cls,model,pos,neg,0,1);
+        case 2
+            % new training
+            model = train_ywc(cls,model,pos,neg,0,1);
+    end
     save([cachedir cls],'model');
 end
 

@@ -2,13 +2,21 @@
 function qp_one
   global qp
 
-  %MEX = true;
-  MEX = false;
+  MEX = true;
+  %MEX = false;
   
   % Random ordering of support vectors
   I = find(qp.sv);
   I = I(randperm(length(I)));
   assert(~isempty(I));
+  
+  % Verify no sharing hypothesis
+  [si,J] = sortrows(qp.i(:,I)');
+  si = si';
+  eqid = [0 all(si(:,2:end) == si(:,1:end-1),1)];
+  if any(eqid)
+      pause;
+  end
   
   % Mex file is much faster
   if MEX,
