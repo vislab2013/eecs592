@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{Bourdev_ECCV2010}
+L.~Bourdev, S.~Maji, T.~Brox, and J.~Malik.
+\newblock Detecting people using mutually consistent poselet activations.
+\newblock In {\em Proceedings of the 11th European Conference on Computer
+  Vision}, 2010.
+
+\bibitem{Bourdev_ICCV2009}
+L.~Bourdev and J.~Malik.
+\newblock Poselets: Body part detectors trained using 3d human pose
+  annotations.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, 2009.
+
+\bibitem{Felzenszwalb_PAMI2010}
+P.~F. Felzenszwalb, R.~B. Girshick, D.~McAllester, and D.~Ramanan.
+\newblock Object detection with discriminatively trained part based models.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  32(9):1627--1645, 2010.
+
+\bibitem{Ramanan_NIPS2006}
+D.~Ramanan.
+\newblock Learning to parse images of articulated bodies.
+\newblock In {\em Advances in Neural Information Processing Systems 19}, pages
+  1129--1136. 2006.
+
+\bibitem{Shotton_CVPR2011}
+J.~Shotton, A.~Fitzgibbon, M.~Cook, T.~Sharp, M.~Finocchio, R.~Moore,
+  A.~Kipman, and A.~Blake.
+\newblock Real-time human pose recognition in parts from single depth images.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, 2011.
+
+\bibitem{Yang_PAMI2011}
+Y.~Yang and D.~Ramanan.
+\newblock Articulated human detection with flexible mixtures of parts.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  35(12):2878--2890, 2011.
+
+\end{thebibliography}

@@ -105,7 +105,7 @@ catch
 
   % -------------------
   % grab testing image information 
-  if ioption~=10 && ioption~=11
+  if ioption~=10 && ioption~=11 && ioption~=20 && ioption~=21
       testims = '20120515-pose-release-ver1.3/code-full/PARSE/im%.4d.jpg';
       test = [];
       numtest = 0;
@@ -115,9 +115,16 @@ catch
           test(numtest).point = ptsAll(:,:,fr);
       end
   else
-      load data_annotation/labels.mat;
-      testims = 'data_collection/processed/im%.4d.jpg';
-      testfrs_pos = 1:70;
+      if ioption==10 || ioption==11
+          load data_annotation/labels.mat;
+          testims = 'data_collection/processed/im%.4d.jpg';
+          testfrs_pos = 1:70;
+      end
+      if ioption==20 || ioption==21
+          ptsAll = zeros(14,2,7);
+          testims = 'data_collection/processed_anec/im%.4d.jpg';
+          testfrs_pos = 1:7;
+      end
       test = [];
       numtest = 0;
       for fr = testfrs_pos

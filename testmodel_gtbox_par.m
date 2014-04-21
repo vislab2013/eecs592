@@ -14,9 +14,9 @@ end
 globals;
 
 switch ioption
-    case {0,10}
+    case {0,10,20}
         savename = [cachedir name '_boxes_gtbox_' suffix];
-    case {1,11}
+    case {1,11,21}
         savename = [cachedir name '_boxes_gtbox_' suffix '_new'];
 end
 
@@ -32,9 +32,9 @@ catch
     fprintf([name ': testing: %d/%d\n'],i,length(test));
     im = imread(test(i).im);
     switch ioption
-        case {0,10}
+        case {0,10,20}
             box = detect_fast(im,model,model.thresh);
-        case {1,11}
+        case {1,11,21}
             box = detect_new(im,model,model.thresh);
     end
     x = test(i).point(:,1);

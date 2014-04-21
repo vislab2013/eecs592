@@ -1,8 +1,8 @@
 clc; close all; clear;
 % setting
-toption = 1;
-ioption = 10;
-poolsize = 1;
+toption = 2;
+ioption = 11;
+poolsize = 12;
 global tname; tname = ['t' num2str(toption,'%02d') 'i' num2str(ioption,'%02d')];
 % globals;
 name = 'PARSE';
