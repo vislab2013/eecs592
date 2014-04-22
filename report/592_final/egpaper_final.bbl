@@ -25,6 +25,11 @@ D.~Ramanan.
 \newblock In {\em Advances in Neural Information Processing Systems 19}, pages
   1129--1136. 2006.
 
+\bibitem{Ramanan_TR2012}
+D.~Ramanan.
+\newblock Dual coordinate solvers for large-scale structural svms.
+\newblock Technical report, Univ. of California, Irvine, 2012.
+
 \bibitem{Shotton_CVPR2011}
 J.~Shotton, A.~Fitzgibbon, M.~Cook, T.~Sharp, M.~Finocchio, R.~Moore,
   A.~Kipman, and A.~Blake.

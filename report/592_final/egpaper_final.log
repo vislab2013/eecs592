@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.2.14)  21 APR 2014 12:54
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.2.14)  22 APR 2014 17:00
 entering extended mode
  %&-line parsing enabled.
 **egpaper_final.tex
@@ -218,7 +218,12 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count110
 \algocf@algoframe=\box33
 \algocf@algobox=\box34
-) (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+) (/usr/share/texmf-texlive/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count111
+\cp@tempcnt=\count112
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
@@ -240,8 +245,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen128
-\Hy@linkcounter=\count111
-\Hy@pagecounter=\count112
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -312,7 +317,7 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count113
+\Fld@menulength=\count115
 \Field@Width=\dimen129
 \Fld@charsize=\dimen130
 \Field@toks=\toks20
@@ -327,37 +332,33 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count114
-\c@Item=\count115
-\c@Hfootnote=\count116
+\Hy@abspage=\count116
+\c@Item=\count117
+\c@Hfootnote=\count118
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count117
-) (./egpaper_final.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
+\Fld@listcount=\count119
+) (./egpaper_final.aux)
 \openout1 = `egpaper_final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 32.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 33.
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ABD: EveryShipout initializing macros
@@ -371,1196 +372,1412 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
+\scratchcounter=\count120
 \scratchdimen=\dimen131
 \scratchbox=\box35
-\nofMPsegments=\count119
-\nofMParguments=\count120
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count121
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen132
-\MPnumerator=\count122
+\MPnumerator=\count124
 \everyMPtoPDFconversion=\toks22
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 32.
+Package hyperref Info: Link coloring ON on input line 33.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count123
+\c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
 \AtBeginShipoutBox=\box36
 Package atbegshi Info: Package `everyshi' patched.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
-LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 66.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
 
-<figure/parse_results.jpg, id=3, 529.4563pt x 315.00293pt>
-File: figure/parse_results.jpg Graphic file (type jpg)
+Underfull \vbox (badness 1527) has occurred while \output is active []
 
-<use figure/parse_results.jpg>
+
 <figure/pictorial.png, id=16, 1130.2225pt x 427.5975pt>
 File: figure/pictorial.png Graphic file (type png)
 
 <use figure/pictorial.png>
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<figure/illustration/img0001_1.pdf, id=19, 345.29pt x 354.32375pt>
+File: figure/illustration/img0001_1.pdf Graphic file (type pdf)
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
+<use figure/illustration/img0001_1.pdf>
+<figure/illustration/img0002_1.pdf, id=20, 449.68pt x 346.29375pt>
+File: figure/illustration/img0002_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0002_1.pdf>
+<figure/illustration/img0003_1.pdf, id=21, 242.9075pt x 354.32375pt>
+File: figure/illustration/img0003_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0003_1.pdf>
+<figure/illustration/img0009_1.pdf, id=22, 449.68pt x 350.30875pt>
+File: figure/illustration/img0009_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0009_1.pdf>
+<figure/illustration/img0010_1.pdf, id=23, 273.02pt x 354.32375pt>
+File: figure/illustration/img0010_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0010_1.pdf>
+<figure/illustration/img0011_1.pdf, id=24, 307.1475pt x 354.32375pt>
+File: figure/illustration/img0011_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0011_1.pdf>
+<figure/illustration/img0035_1.pdf, id=25, 271.0125pt x 354.32375pt>
+File: figure/illustration/img0035_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0035_1.pdf>
+<figure/illustration/img0153_1.pdf, id=26, 449.68pt x 296.10625pt>
+File: figure/illustration/img0153_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0153_1.pdf>
+<figure/illustration/img0097_1.pdf, id=27, 449.68pt x 300.12125pt>
+File: figure/illustration/img0097_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0097_1.pdf>
+<figure/illustration/img0105_1.pdf, id=28, 295.1025pt x 354.32375pt>
+File: figure/illustration/img0105_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0105_1.pdf>
+<figure/illustration/img0112_1.pdf, id=29, 246.9225pt x 354.32375pt>
+File: figure/illustration/img0112_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0112_1.pdf>
+<figure/illustration/img0046_1.pdf, id=30, 290.08376pt x 354.32375pt>
+File: figure/illustration/img0046_1.pdf Graphic file (type pdf)
+
+<use figure/illustration/img0046_1.pdf>
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 120.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figure/parse_results.jpg> <./figure/pictorial.png (PNG copy)>]
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 183--183
+ <./figure/pictorial.png (PNG copy)>]
+<figure/parse/00_img0036_1.pdf, id=53, 340.27126pt x 354.32375pt>
+File: figure/parse/00_img0036_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0036_1.pdf>
+<figure/parse/00_img0036_2.pdf, id=54, 340.27126pt x 354.32375pt>
+File: figure/parse/00_img0036_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0036_2.pdf>
+<figure/parse/00_img0017_1.pdf, id=55, 237.88875pt x 354.32375pt>
+File: figure/parse/00_img0017_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0017_1.pdf>
+<figure/parse/00_img0017_2.pdf, id=56, 237.88875pt x 354.32375pt>
+File: figure/parse/00_img0017_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0017_2.pdf>
+<figure/parse/00_img0086_1.pdf, id=57, 252.945pt x 354.32375pt>
+File: figure/parse/00_img0086_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0086_1.pdf>
+<figure/parse/00_img0086_2.pdf, id=58, 252.945pt x 354.32375pt>
+File: figure/parse/00_img0086_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0086_2.pdf>
+<figure/parse/00_img0029_1.pdf, id=59, 431.6125pt x 354.32375pt>
+File: figure/parse/00_img0029_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0029_1.pdf>
+<figure/parse/00_img0029_2.pdf, id=60, 431.6125pt x 354.32375pt>
+File: figure/parse/00_img0029_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0029_2.pdf>
+Overfull \hbox (0.71864pt too wide) in paragraph at lines 130--137
+ []  []  []  []  []  []  []  [] 
+ []
+
+<figure/parse/01_img0036_1.pdf, id=61, 340.27126pt x 354.32375pt>
+File: figure/parse/01_img0036_1.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0036_1.pdf>
+<figure/parse/01_img0036_2.pdf, id=62, 340.27126pt x 354.32375pt>
+File: figure/parse/01_img0036_2.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0036_2.pdf>
+<figure/parse/01_img0017_1.pdf, id=63, 237.88875pt x 354.32375pt>
+File: figure/parse/01_img0017_1.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0017_1.pdf>
+<figure/parse/01_img0017_2.pdf, id=64, 237.88875pt x 354.32375pt>
+File: figure/parse/01_img0017_2.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0017_2.pdf>
+<figure/parse/01_img0086_1.pdf, id=65, 252.945pt x 354.32375pt>
+File: figure/parse/01_img0086_1.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0086_1.pdf>
+<figure/parse/01_img0086_2.pdf, id=66, 252.945pt x 354.32375pt>
+File: figure/parse/01_img0086_2.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0086_2.pdf>
+<figure/parse/01_img0029_1.pdf, id=67, 431.6125pt x 354.32375pt>
+File: figure/parse/01_img0029_1.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0029_1.pdf>
+<figure/parse/01_img0029_2.pdf, id=68, 431.6125pt x 354.32375pt>
+File: figure/parse/01_img0029_2.pdf Graphic file (type pdf)
+
+<use figure/parse/01_img0029_2.pdf>
+Overfull \hbox (0.71864pt too wide) in paragraph at lines 141--148
+ [][]  []  []  []  []  []  []  [] 
+ []
+
+
+Underfull \vbox (badness 1783) has occurred while \output is active []
+
+ [2 <./figure/illustration/img0001_1.pdf> <./figure/illustration/img0002_1.pdf>
+ <./figure/illustration/img0003_1.pdf> <./figure/illustration/img0009_1.pdf> <.
+/figure/illustration/img0010_1.pdf> <./figure/illustration/img0011_1.pdf> <./fi
+gure/illustration/img0035_1.pdf> <./figure/illustration/img0153_1.pdf> <./figur
+e/illustration/img0097_1.pdf> <./figure/illustration/img0105_1.pdf> <./figure/i
+llustration/img0112_1.pdf> <./figure/illustration/img0046_1.pdf>]
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Hea| 
  []
 
 
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 183--183
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Sho| 
  []
 
 
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 183--183
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Wri| 
  []
 
 
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 183--183
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Hip| 
  []
 
 
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 183--183
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Kne| 
  []
 
 
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 183--183
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Ank| 
  []
 
 
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 183--183
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 193--193
 []\OT1/ptm/m/n/10 Avg| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 88.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 82.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 61.2| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 44.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 68.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 66.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 61.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 185--185
-[]\OT1/ptm/m/n/10 67.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 77.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 71.2| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 47.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 31.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 58.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 56.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 49.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 186--186
-[]\OT1/ptm/m/n/10 56.1| 
- []
-
-
-Overfull \hbox (9.43726pt too wide) in paragraph at lines 181--188
- [] 
- []
-
-
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Hea| 
- []
-
-
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Sho| 
- []
-
-
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Wri| 
- []
-
-
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Hip| 
- []
-
-
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Kne| 
- []
-
-
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Ank| 
- []
-
-
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 197--197
-[]\OT1/ptm/m/n/10 Avg| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 83.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 77.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 49.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 26.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 56.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 52.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 43.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 199--199
-[]\OT1/ptm/m/n/10 55.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 71.2| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 62.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 32.4| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 15.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 42.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 38.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 33.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 200--200
-[]\OT1/ptm/m/n/10 42.4| 
- []
-
-
-Overfull \hbox (9.43726pt too wide) in paragraph at lines 195--202
- [] 
- []
-
-<figure/inference_example/img0003_1.pdf, id=53, 242.9075pt x 354.32375pt>
-File: figure/inference_example/img0003_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0003_1.pdf>
-<figure/inference_example/img0003_2.pdf, id=54, 242.9075pt x 354.32375pt>
-File: figure/inference_example/img0003_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0003_2.pdf>
-<figure/inference_example/img0005_1.pdf, id=55, 258.9675pt x 354.32375pt>
-File: figure/inference_example/img0005_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0005_1.pdf>
-<figure/inference_example/img0005_2.pdf, id=56, 258.9675pt x 354.32375pt>
-File: figure/inference_example/img0005_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0005_2.pdf>
-<figure/inference_example/img0037_1.pdf, id=57, 449.68pt x 284.06125pt>
-File: figure/inference_example/img0037_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0037_1.pdf>
-<figure/inference_example/img0037_2.pdf, id=58, 449.68pt x 284.06125pt>
-File: figure/inference_example/img0037_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0037_2.pdf>
-Overfull \hbox (12.85173pt too wide) in paragraph at lines 210--215
- []  []  []  []  []  []  
- []
-
-<figure/inference_example/img0016_1.pdf, id=59, 266.9975pt x 354.32375pt>
-File: figure/inference_example/img0016_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0016_1.pdf>
-<figure/inference_example/img0016_2.pdf, id=60, 266.9975pt x 354.32375pt>
-File: figure/inference_example/img0016_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0016_2.pdf>
-<figure/inference_example/img0149_1.pdf, id=61, 429.605pt x 354.32375pt>
-File: figure/inference_example/img0149_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0149_1.pdf>
-<figure/inference_example/img0149_2.pdf, id=62, 429.605pt x 354.32375pt>
-File: figure/inference_example/img0149_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0149_2.pdf>
-<figure/inference_example/img0175_1.pdf, id=63, 449.68pt x 308.15125pt>
-File: figure/inference_example/img0175_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0175_1.pdf>
-<figure/inference_example/img0175_2.pdf, id=64, 449.68pt x 308.15125pt>
-File: figure/inference_example/img0175_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0175_2.pdf>
-Overfull \hbox (12.26945pt too wide) in paragraph at lines 217--222
- [][]  []  []  []  []  [] 
- []
-
-<figure/inference_example/img0002_1.pdf, id=65, 449.68pt x 346.29375pt>
-File: figure/inference_example/img0002_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0002_1.pdf>
-<figure/inference_example/img0002_2.pdf, id=66, 449.68pt x 346.29375pt>
-File: figure/inference_example/img0002_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0002_2.pdf>
-<figure/inference_example/img0010_1.pdf, id=67, 273.02pt x 354.32375pt>
-File: figure/inference_example/img0010_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0010_1.pdf>
-<figure/inference_example/img0010_2.pdf, id=68, 273.02pt x 354.32375pt>
-File: figure/inference_example/img0010_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0010_2.pdf>
-<figure/inference_example/img0013_1.pdf, id=69, 443.6575pt x 354.32375pt>
-File: figure/inference_example/img0013_1.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0013_1.pdf>
-<figure/inference_example/img0013_2.pdf, id=70, 443.6575pt x 354.32375pt>
-File: figure/inference_example/img0013_2.pdf Graphic file (type pdf)
-
-<use figure/inference_example/img0013_2.pdf>
-Overfull \hbox (11.083pt too wide) in paragraph at lines 224--229
- [][]  []   []  []   []  [] 
- []
-
-
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Hea| 
- []
-
-
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Sho| 
- []
-
-
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Wri| 
- []
-
-
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Hip| 
- []
-
-
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Kne| 
- []
-
-
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Ank| 
- []
-
-
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 283--283
-[]\OT1/ptm/m/n/10 Avg| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
-[]\OT1/ptm/m/n/10 88.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 81.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 62.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 42.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 71.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 68.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 61.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 285--285
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 195--195
 []\OT1/ptm/m/n/10 67.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 78.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 70.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 40.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 28.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 58.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 56.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 52.4| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 286--286
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 196--196
 []\OT1/ptm/m/n/10 54.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 87.3| 
+Overfull \hbox (9.43726pt too wide) in paragraph at lines 191--198
+ [] 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 79.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 58.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 43.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 70.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 63.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 58.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 66.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 79.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 71.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 40.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 30.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 57.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 58.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 54.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 289--289
-[]\OT1/ptm/m/n/10 56.0| 
- []
-
-
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 300--300
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Hea| 
  []
 
 
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 300--300
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Sho| 
  []
 
 
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 300--300
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Wri| 
  []
 
 
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 300--300
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Hip| 
  []
 
 
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Kne| 
  []
 
 
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Ank| 
  []
 
 
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 202--202
 []\OT1/ptm/m/n/10 Avg| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 83.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 77.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 45.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 24.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 60.4| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 53.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 46.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 302--302
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 204--204
 []\OT1/ptm/m/n/10 56.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 69.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 60.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 24.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 10.4| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 42.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 36.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 33.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 303--303
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 205--205
 []\OT1/ptm/m/n/10 39.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 83.2| 
+Overfull \hbox (9.43726pt too wide) in paragraph at lines 200--207
+ [][] 
+ []
+
+<figure/parse/00_img0011_1.pdf, id=183, 308.15125pt x 354.32375pt>
+File: figure/parse/00_img0011_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0011_1.pdf>
+<figure/parse/00_img0011_2.pdf, id=184, 308.15125pt x 354.32375pt>
+File: figure/parse/00_img0011_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0011_2.pdf>
+<figure/parse/00_img0098_1.pdf, id=185, 295.1025pt x 354.32375pt>
+File: figure/parse/00_img0098_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0098_1.pdf>
+<figure/parse/00_img0098_2.pdf, id=186, 295.1025pt x 354.32375pt>
+File: figure/parse/00_img0098_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0098_2.pdf>
+<figure/parse/00_img0156_1.pdf, id=187, 266.9975pt x 354.32375pt>
+File: figure/parse/00_img0156_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0156_1.pdf>
+<figure/parse/00_img0156_2.pdf, id=188, 266.9975pt x 354.32375pt>
+File: figure/parse/00_img0156_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0156_2.pdf>
+<figure/parse/00_img0163_1.pdf, id=189, 449.68pt x 312.16624pt>
+File: figure/parse/00_img0163_1.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0163_1.pdf>
+<figure/parse/00_img0163_2.pdf, id=190, 449.68pt x 312.16624pt>
+File: figure/parse/00_img0163_2.pdf Graphic file (type pdf)
+
+<use figure/parse/00_img0163_2.pdf>
+Overfull \hbox (5.99544pt too wide) in paragraph at lines 216--223
+ []  []  []  []  []  []  []  [] 
+ []
+
+<figure/parse/20_img0011_1.pdf, id=191, 308.15125pt x 354.32375pt>
+File: figure/parse/20_img0011_1.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0011_1.pdf>
+<figure/parse/20_img0011_2.pdf, id=192, 308.15125pt x 354.32375pt>
+File: figure/parse/20_img0011_2.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0011_2.pdf>
+<figure/parse/20_img0098_1.pdf, id=193, 295.1025pt x 354.32375pt>
+File: figure/parse/20_img0098_1.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0098_1.pdf>
+<figure/parse/20_img0098_2.pdf, id=194, 295.1025pt x 354.32375pt>
+File: figure/parse/20_img0098_2.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0098_2.pdf>
+<figure/parse/20_img0156_1.pdf, id=195, 266.9975pt x 354.32375pt>
+File: figure/parse/20_img0156_1.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0156_1.pdf>
+<figure/parse/20_img0156_2.pdf, id=196, 266.9975pt x 354.32375pt>
+File: figure/parse/20_img0156_2.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0156_2.pdf>
+<figure/parse/20_img0163_1.pdf, id=197, 449.68pt x 312.16624pt>
+File: figure/parse/20_img0163_1.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0163_1.pdf>
+<figure/parse/20_img0163_2.pdf, id=198, 449.68pt x 312.16624pt>
+File: figure/parse/20_img0163_2.pdf Graphic file (type pdf)
+
+<use figure/parse/20_img0163_2.pdf>
+Overfull \hbox (5.99544pt too wide) in paragraph at lines 225--232
+ [][]  []  []  []  []  []  []  [] 
+ []
+
+<figure/parse/21_img0011_1.pdf, id=199, 307.1475pt x 354.32375pt>
+File: figure/parse/21_img0011_1.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0011_1.pdf>
+<figure/parse/21_img0011_2.pdf, id=200, 307.1475pt x 354.32375pt>
+File: figure/parse/21_img0011_2.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0011_2.pdf>
+<figure/parse/21_img0098_1.pdf, id=201, 295.1025pt x 354.32375pt>
+File: figure/parse/21_img0098_1.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0098_1.pdf>
+<figure/parse/21_img0098_2.pdf, id=202, 295.1025pt x 354.32375pt>
+File: figure/parse/21_img0098_2.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0098_2.pdf>
+<figure/parse/21_img0156_1.pdf, id=203, 266.9975pt x 354.32375pt>
+File: figure/parse/21_img0156_1.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0156_1.pdf>
+<figure/parse/21_img0156_2.pdf, id=204, 266.9975pt x 354.32375pt>
+File: figure/parse/21_img0156_2.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0156_2.pdf>
+<figure/parse/21_img0163_1.pdf, id=205, 449.68pt x 312.16624pt>
+File: figure/parse/21_img0163_1.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0163_1.pdf>
+<figure/parse/21_img0163_2.pdf, id=206, 449.68pt x 312.16624pt>
+File: figure/parse/21_img0163_2.pdf Graphic file (type pdf)
+
+<use figure/parse/21_img0163_2.pdf>
+Overfull \hbox (5.64922pt too wide) in paragraph at lines 234--241
+ [][]  []  []  []  []  []  []  [] 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 75.7| 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./figure/parse/00_img0036_1.pdf> <./figure/parse/00_img0036_2.pdf> <./figu
+re/parse/00_img0017_1.pdf> <./figure/parse/00_img0017_2.pdf> <./figure/parse/00
+_img0086_1.pdf> <./figure/parse/00_img0086_2.pdf> <./figure/parse/00_img0029_1.
+pdf> <./figure/parse/00_img0029_2.pdf> <./figure/parse/01_img0036_1.pdf> <./fig
+ure/parse/01_img0036_2.pdf> <./figure/parse/01_img0017_1.pdf> <./figure/parse/0
+1_img0017_2.pdf> <./figure/parse/01_img0086_1.pdf> <./figure/parse/01_img0086_2
+.pdf> <./figure/parse/01_img0029_1.pdf> <./figure/parse/01_img0029_2.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 44.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 26.5| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 57.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 49.2| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 41.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 305--305
-[]\OT1/ptm/m/n/10 54.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 72.5| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 63.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 25.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 13.8| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 42.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 43.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 37.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/10 42.5| 
- []
-
-
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 319--319
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Hea| 
  []
 
 
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 319--319
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Sho| 
  []
 
 
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 319--319
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Wri| 
  []
 
 
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 319--319
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Hip| 
  []
 
 
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 319--319
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Kne| 
  []
 
 
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 319--319
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Ank| 
  []
 
 
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 319--319
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Avg| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 67.9| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 88.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 47.9| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 81.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 29.3| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 62.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 20.7| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 42.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 33.6| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 71.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 31.4| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 68.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 61.2| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 317--317
+[]\OT1/ptm/m/n/10 67.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 87.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 79.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 58.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 43.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 70.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 63.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 58.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 318--318
+[]\OT1/ptm/m/n/10 66.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 79.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 71.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 40.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
 []\OT1/ptm/m/n/10 30.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 321--321
-[]\OT1/ptm/m/n/10 37.2| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 57.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 60.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 58.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 39.3| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 54.1| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 17.9| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 319--319
+[]\OT1/ptm/m/n/10 56.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 19.3| 
+Overfull \hbox (9.43727pt too wide) in paragraph at lines 313--321
+ [] 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 25.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 25.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 30.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 322--322
-[]\OT1/ptm/m/n/10 31.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 67.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 51.4| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 22.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 18.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 34.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 30.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 31.4| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 323--323
-[]\OT1/ptm/m/n/10 36.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 57.9| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 38.6| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 20.7| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 15.0| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 24.3| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 27.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 32.1| 
- []
-
-
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 324--324
-[]\OT1/ptm/m/n/10 30.8| 
- []
-
-
-Overfull \hbox (1.87349pt too wide) in paragraph at lines 335--335
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Hea| 
  []
 
 
-Overfull \hbox (1.33357pt too wide) in paragraph at lines 335--335
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Sho| 
  []
 
 
-Overfull \hbox (1.32343pt too wide) in paragraph at lines 335--335
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Wri| 
  []
 
 
-Overfull \hbox (0.7735pt too wide) in paragraph at lines 335--335
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Hip| 
  []
 
 
-Overfull \hbox (2.43355pt too wide) in paragraph at lines 335--335
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Kne| 
  []
 
 
-Overfull \hbox (2.9936pt too wide) in paragraph at lines 335--335
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Ank| 
  []
 
 
-Overfull \hbox (2.2536pt too wide) in paragraph at lines 335--335
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 325--325
 []\OT1/ptm/m/n/10 Avg| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 54.8| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 83.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 35.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 77.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 19.4| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 45.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 10.5| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 24.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 22.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 60.4| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 15.7| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 53.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 19.1| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 46.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 337--337
-[]\OT1/ptm/m/n/10 25.2| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 327--327
+[]\OT1/ptm/m/n/10 56.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 46.2| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 83.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 29.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 75.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 19.8| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 44.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 15.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 26.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 17.3| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 57.0| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 338--338
-[]\OT1/ptm/m/n/10 20.5| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 49.2| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 49.6| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 41.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 34.5| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 328--328
+[]\OT1/ptm/m/n/10 54.1| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 15.7| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 72.5| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 22.8| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 63.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 13.9| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 25.1| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 18.0| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 13.8| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 339--339
-[]\OT1/ptm/m/n/10 23.2| 
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 42.7| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 43.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 37.1| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 329--329
+[]\OT1/ptm/m/n/10 42.5| 
+ []
+
+
+Overfull \hbox (9.43727pt too wide) in paragraph at lines 323--331
+ [][] 
+ []
+
+[4 <./figure/parse/00_img0011_1.pdf> <./figure/parse/00_img0011_2.pdf> <./figur
+e/parse/00_img0098_1.pdf> <./figure/parse/00_img0098_2.pdf> <./figure/parse/00_
+img0156_1.pdf> <./figure/parse/00_img0156_2.pdf> <./figure/parse/00_img0163_1.p
+df> <./figure/parse/00_img0163_2.pdf> <./figure/parse/20_img0011_1.pdf> <./figu
+re/parse/20_img0011_2.pdf> <./figure/parse/20_img0098_1.pdf> <./figure/parse/20
+_img0098_2.pdf> <./figure/parse/20_img0156_1.pdf> <./figure/parse/20_img0156_2.
+pdf> <./figure/parse/20_img0163_1.pdf> <./figure/parse/20_img0163_2.pdf> <./fig
+ure/parse/21_img0011_1.pdf> <./figure/parse/21_img0011_2.pdf> <./figure/parse/2
+1_img0098_1.pdf> <./figure/parse/21_img0098_2.pdf> <./figure/parse/21_img0156_1
+.pdf> <./figure/parse/21_img0156_2.pdf> <./figure/parse/21_img0163_1.pdf> <./fi
+gure/parse/21_img0163_2.pdf>]
+Overfull \hbox (5.96815pt too wide) in paragraph at lines 344--344
+[] 
+ []
+
+<figure/train_num.pdf, id=472, 495.8525pt x 391.4625pt>
+File: figure/train_num.pdf Graphic file (type pdf)
+
+<use figure/train_num.pdf> [5 <./figure/train_num.pdf>]
+<figure/newdata.jpg, id=492, 947.54pt x 1433.355pt>
+File: figure/newdata.jpg Graphic file (type jpg)
+ <use figure/newdata.jpg>
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Hea| 
+ []
+
+
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Sho| 
+ []
+
+
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Wri| 
+ []
+
+
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Hip| 
+ []
+
+
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Kne| 
+ []
+
+
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Ank| 
+ []
+
+
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 386--386
+[]\OT1/ptm/m/n/10 Avg| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 67.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
 []\OT1/ptm/m/n/10 47.9| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 29.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 20.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 33.6| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 31.4| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 30.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 388--388
+[]\OT1/ptm/m/n/10 37.2| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 60.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 39.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 17.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 19.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 25.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 25.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 30.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 389--389
+[]\OT1/ptm/m/n/10 31.1| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 67.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 51.4| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 22.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 18.6| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 34.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 30.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 31.4| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 390--390
+[]\OT1/ptm/m/n/10 36.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 57.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 38.6| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 20.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 15.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 24.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 27.1| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 32.1| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 391--391
+[]\OT1/ptm/m/n/10 30.8| 
+ []
+
+
+Overfull \hbox (17.97318pt too wide) in paragraph at lines 384--393
+ [] 
+ []
+
+
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Hea| 
+ []
+
+
+Overfull \hbox (1.33357pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Sho| 
+ []
+
+
+Overfull \hbox (1.32343pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Wri| 
+ []
+
+
+Overfull \hbox (0.7735pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Hip| 
+ []
+
+
+Overfull \hbox (2.43355pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Kne| 
+ []
+
+
+Overfull \hbox (2.9936pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Ank| 
+ []
+
+
+Overfull \hbox (2.2536pt too wide) in paragraph at lines 397--397
+[]\OT1/ptm/m/n/10 Avg| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 54.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 35.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 19.4| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 10.5| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 22.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 15.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 19.1| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 399--399
+[]\OT1/ptm/m/n/10 25.2| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 46.2| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 29.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 19.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 15.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 17.3| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 400--400
+[]\OT1/ptm/m/n/10 20.5| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 49.6| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 34.5| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 15.7| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 22.8| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 13.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 18.0| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 23.2| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
+[]\OT1/ptm/m/n/10 47.9| 
+ []
+
+
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
 []\OT1/ptm/m/n/10 32.3| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
 []\OT1/ptm/m/n/10 15.1| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
 []\OT1/ptm/m/n/10 14.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
 []\OT1/ptm/m/n/10 19.6| 
  []
 
 
-Overfull \hbox (3.27364pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.27364pt too wide) in paragraph at lines 402--402
 []\OT1/ptm/m/n/10 20.3| 
  []
 
-(./egpaper_final.bbl (./egpaper_final.brf)
+
+Overfull \hbox (17.97318pt too wide) in paragraph at lines 395--404
+ [][] 
+ []
+
+<figure/new_dataset/img0017_1.pdf, id=504, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0017_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0017_1.pdf>
+<figure/new_dataset/img0017_2.pdf, id=505, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0017_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0017_2.pdf>
+<figure/new_dataset/img0023_1.pdf, id=506, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0023_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0023_1.pdf>
+<figure/new_dataset/img0023_2.pdf, id=507, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0023_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0023_2.pdf>
+<figure/new_dataset/img0063_1.pdf, id=508, 236.885pt x 354.32375pt>
+File: figure/new_dataset/img0063_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0063_1.pdf>
+<figure/new_dataset/img0063_2.pdf, id=509, 236.885pt x 354.32375pt>
+File: figure/new_dataset/img0063_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0063_2.pdf>
+<figure/new_dataset/img0058_1.pdf, id=510, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0058_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0058_1.pdf>
+<figure/new_dataset/img0058_2.pdf, id=511, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0058_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0058_2.pdf>
+Overfull \hbox (5.38704pt too wide) in paragraph at lines 413--420
+ []  []  []  []  []  []  []  [] 
+ []
+
+<figure/new_dataset/img0018_1.pdf, id=512, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0018_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0018_1.pdf>
+<figure/new_dataset/img0018_2.pdf, id=513, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0018_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0018_2.pdf>
+<figure/new_dataset/img0010_1.pdf, id=514, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0010_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0010_1.pdf>
+<figure/new_dataset/img0010_2.pdf, id=515, 449.68pt x 336.25626pt>
+File: figure/new_dataset/img0010_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0010_2.pdf>
+<figure/new_dataset/img0035_1.pdf, id=516, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0035_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0035_1.pdf>
+<figure/new_dataset/img0035_2.pdf, id=517, 264.99pt x 354.32375pt>
+File: figure/new_dataset/img0035_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0035_2.pdf>
+<figure/new_dataset/img0014_1.pdf, id=518, 449.68pt x 300.12125pt>
+File: figure/new_dataset/img0014_1.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0014_1.pdf>
+<figure/new_dataset/img0014_2.pdf, id=519, 449.68pt x 300.12125pt>
+File: figure/new_dataset/img0014_2.pdf Graphic file (type pdf)
+
+<use figure/new_dataset/img0014_2.pdf>
+Overfull \hbox (7.46513pt too wide) in paragraph at lines 422--429
+ [][]  []  []  []  []  []  []  [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 436.
+
+Underfull \vbox (badness 7925) has occurred while \output is active []
+
+ [6 <./figure/newdata.jpg>]
+<figure/anecdotal/img0002_2.pdf, id=535, 264.99pt x 354.32375pt>
+File: figure/anecdotal/img0002_2.pdf Graphic file (type pdf)
+
+<use figure/anecdotal/img0002_2.pdf>
+<figure/anecdotal/img0003_2.pdf, id=536, 264.99pt x 354.32375pt>
+File: figure/anecdotal/img0003_2.pdf Graphic file (type pdf)
+
+<use figure/anecdotal/img0003_2.pdf>
+<figure/anecdotal/img0005_2.pdf, id=537, 235.88126pt x 354.32375pt>
+File: figure/anecdotal/img0005_2.pdf Graphic file (type pdf)
+
+<use figure/anecdotal/img0005_2.pdf>
+<figure/anecdotal/img0006_2.pdf, id=538, 449.68pt x 300.12125pt>
+File: figure/anecdotal/img0006_2.pdf Graphic file (type pdf)
+
+<use figure/anecdotal/img0006_2.pdf>
+<figure/anecdotal/img0007_2.pdf, id=539, 449.68pt x 300.12125pt>
+File: figure/anecdotal/img0007_2.pdf Graphic file (type pdf)
+
+<use figure/anecdotal/img0007_2.pdf> (./egpaper_final.bbl (./egpaper_final.brf)
 \tf@brf=\write3
 \openout3 = `egpaper_final.brf'.
 
- [2]) [3] [4 <./figure/inference_example/img0003_1.pdf> <./figure/inference_exa
-mple/img0003_2.pdf> <./figure/inference_example/img0005_1.pdf> <./figure/infere
-nce_example/img0005_2.pdf> <./figure/inference_example/img0037_1.pdf> <./figure
-/inference_example/img0037_2.pdf> <./figure/inference_example/img0016_1.pdf> <.
-/figure/inference_example/img0016_2.pdf> <./figure/inference_example/img0149_1.
-pdf> <./figure/inference_example/img0149_2.pdf> <./figure/inference_example/img
-0175_1.pdf> <./figure/inference_example/img0175_2.pdf> <./figure/inference_exam
-ple/img0002_1.pdf> <./figure/inference_example/img0002_2.pdf> <./figure/inferen
-ce_example/img0010_1.pdf> <./figure/inference_example/img0010_2.pdf> <./figure/
-inference_example/img0013_1.pdf> <./figure/inference_example/img0013_2.pdf>] (.
-/egpaper_final.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) [7 <./figure/new_dataset/img0017_1.pdf> <./figure/new_dataset/img0017_2.pdf> 
+<./figure/new_dataset/img0023_1.pdf> <./figure/new_dataset/img0023_2.pdf> <./fi
+gure/new_dataset/img0063_1.pdf> <./figure/new_dataset/img0063_2.pdf> <./figure/
+new_dataset/img0058_1.pdf> <./figure/new_dataset/img0058_2.pdf> <./figure/new_d
+ataset/img0018_1.pdf> <./figure/new_dataset/img0018_2.pdf> <./figure/new_datase
+t/img0010_1.pdf> <./figure/new_dataset/img0010_2.pdf> <./figure/new_dataset/img
+0035_1.pdf> <./figure/new_dataset/img0035_2.pdf> <./figure/new_dataset/img0014_
+1.pdf> <./figure/new_dataset/img0014_2.pdf> <./figure/anecdotal/img0002_2.pdf> 
+<./figure/anecdotal/img0003_2.pdf> <./figure/anecdotal/img0005_2.pdf> <./figure
+/anecdotal/img0006_2.pdf> <./figure/anecdotal/img0007_2.pdf>]
+(./egpaper_final.aux) ) 
 Here is how much of TeX's memory you used:
- 7532 strings out of 493848
- 109714 string characters out of 1152823
- 260251 words of memory out of 3000000
- 10625 multiletter control sequences out of 15000+50000
- 24273 words of font info for 61 fonts, out of 3000000 for 9000
+ 7892 strings out of 493848
+ 119004 string characters out of 1152823
+ 235095 words of memory out of 3000000
+ 10908 multiletter control sequences out of 15000+50000
+ 30147 words of font info for 68 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,17n,41p,911b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/
-urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
--texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (4 pages, 499967 bytes).
+ 38i,17n,41p,2394b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on egpaper_final.pdf (7 pages, 1937223 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 789 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -9,6 +9,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[ruled,noline]{algorithm2e}
+\usepackage{changepage}
 
 % Include other packages here, before hyperref.
 
@@ -33,7 +34,7 @@
 
 %%%%%%%%% TITLE
 %\title{\LaTeX\ Author Guidelines for CVPR Proceedings}
-\title{{\vspace{-30mm}\small EECS 592 Advanced AI, Winter 2014, Project Progress Report} \\
+\title{{\vspace{-30mm}\small EECS 592 Advanced AI, Winter 2014, Project Final Report} \\
 ~\\
 ~\\
 ~\\
@@ -79,38 +80,87 @@ University of Michigan, Ann Arbor, MI 48109, USA\\
 %\input{06_conclude}
 
 \section{Introduction}
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=8.3cm]{figure/parse_results.jpg}
-  \caption{Illustration of Yang and Ramanan's work on human detection and pose estimation \cite{Yang_PAMI2011}. Different color of boxes identify different local parts of human body.}
-\label{fig:intro}
-\end{figure}
-Human detection and pose estimation is a challenging problem in computer vision studies. Recently there has been many outstanding works published in addressing the these problems \cite{Bourdev_ICCV2009, Bourdev_ECCV2010, Felzenszwalb_PAMI2010, Yang_PAMI2011, Shotton_CVPR2011}. A very interesting line of work is the application of part-based models \cite{Felzenszwalb_PAMI2010, Yang_PAMI2011}. Part-based models can be viewed an extension of the rigid template models in the way that the target objects are represented by local parts, and the locations of these local parts have some amount of flexibility to capture the uncertainly in real-world data.
+Human detection and pose estimation is a challenging problem in computer vision studies. The major difficulties come from that 1) human body is non-rigid and the configurations of the limbs have a large degree of freedom, 2) limbs vary greatly in apprearance due to changes in clothing and body shape, as well as changes in viewpoint manifested, and 3) human body parts can be occluded or self-occluded due to the performed activity or interaction with other objects. However, a success in human detection and pose estimation can be very critical, since it will help a large number of tasks such as object detection, activity recognition, and robot nevigation. After decades of efforts, significant progress has been made by the computer vision researchers, but the problem still remains unsolved, and many related papers are published every year.
 
-In this work, we proposed to replicate Yang and Ramanan's paper \cite{Yang_PAMI2011} on human detection and pose estimation. Unlike the famous deformable part-based model \cite{Felzenszwalb_PAMI2010}, which addressed generic object detection, Yang and Ramanan focus specifically on human detection in RGB images. They carefully designed a system that can locate the body parts of the human, as illustrated in Fig. \ref{fig:intro}. They used a mixtures of templates for each parts so they can effetively modeled human poses.
+Recently there has been a number of outstanding published works in addressing human detection and pose estimation \cite{Bourdev_ICCV2009, Bourdev_ECCV2010, Felzenszwalb_PAMI2010, Yang_PAMI2011, Shotton_CVPR2011}. A common strategy of these works is to represent human body by local parts, and build a relational model to perform full body detection. Part-based models can be viewed as an extension of the rigid template models in the way that the target objects are represented by local parts, and the locations of these local parts have some amount of flexibility to capture the uncertainly in real-world data. An immediate and fundamental question is using what kind of part representation will be helpful for human detection. In \cite{Bourdev_ICCV2009, Bourdev_ECCV2010, Felzenszwalb_PAMI2010}, human parts are taken to be discriminant local patches in the images of human body, while in \cite{Yang_PAMI2011}, parts are explicitly modeled by a list of predefined body joints. Different design rationales capture different strengths in the human detection task, but they are addressing the same challenge coming from the large variability of human appearance due to articulation.
 
-\section{Replication Plan}
+In this work, we proposed to replicate Yang and Ramanan's paper \cite{Yang_PAMI2011} on human detection and pose estimation using RGB images. We have seen one state-of-the-art object detection method, namely the deformable part-based model (DPM) \cite{Felzenszwalb_PAMI2010}, in the lecture. Yang and Ramanan's work differs from the DPM model in several important ways: 1) while the DPM paper addresses generic object detection, Yang and Ramanan focus specifically on human detection, 2) DPM treats the parts as latent variables and the model is learnt only given the annotations of object full extents, while in Yang and Ramanan's paper, the annotations of body parts are given as a stronger supervision during training, and 3) DPM models significant appearnce variance (e.g. viewpoint changes) by using a set of global mixture models, while Yang and Ramanan use local mixture models (i.e. multiple templates for each body part), and allow a larger variabilitiy in capturing appearance changes. Given these advantages and the state-of-the-art performance reported in the paper, we conclude that this paper has significant contributions and is worth a replication study. An illustration of Yang and Ranaman's model and samples of human detection results are shown in Fig. \ref{fig:intro} and Fig \ref{fig:pictorial}, respectively.
+
+\section{Replication Overview}
 \begin{figure}[t]
   \centering
   \includegraphics[width=8.3cm]{figure/pictorial.png}
-  \caption{Illustration of the pictorial structure and mixture of local parts.}
-\label{}
+  \caption{Illustration of the pictorial structure and mixture of local parts in Yang and Ramanan's paper \cite{Yang_PAMI2011}.}
+\label{fig:pictorial}
 \end{figure}
 
-We list our plans for this replication study as following:
+\begin{figure}[t]
+  \begin{center}
+      \includegraphics[height=0.22\linewidth]{figure/illustration/img0001_1.pdf}~~%&
+      \includegraphics[height=0.22\linewidth]{figure/illustration/img0002_1.pdf}~~%&
+      \includegraphics[height=0.22\linewidth]{figure/illustration/img0003_1.pdf}~~%&
+      \includegraphics[height=0.22\linewidth]{figure/illustration/img0009_1.pdf}\\
+      \vspace{0.2cm}
+      \includegraphics[height=0.24\linewidth]{figure/illustration/img0010_1.pdf}~~%&
+      \includegraphics[height=0.24\linewidth]{figure/illustration/img0011_1.pdf}~~%&
+      \includegraphics[height=0.24\linewidth]{figure/illustration/img0035_1.pdf}~~%&
+      \includegraphics[height=0.24\linewidth]{figure/illustration/img0153_1.pdf}\\
+      \vspace{0.2cm}
+      \includegraphics[height=0.245\linewidth]{figure/illustration/img0097_1.pdf}~~%&
+      \includegraphics[height=0.245\linewidth]{figure/illustration/img0105_1.pdf}~~%&
+      \includegraphics[height=0.245\linewidth]{figure/illustration/img0112_1.pdf}~~%&
+      \includegraphics[height=0.245\linewidth]{figure/illustration/img0046_1.pdf}\\
+  \end{center}
+  \caption{Illustration of Yang and Ramanan's work on human detection and pose estimation \cite{Yang_PAMI2011}. Different color of boxes identify different local parts of human body.}
+\label{fig:intro}
+\end{figure}
+
+Our plan for this replication study can be divided into three main blocks. In short, we aim to first replicate the experimental results by following the techniques presented in the paper, and then study the proposed method further by experimenting with different settings, as well as understand how well it can be generalized to more realistic images.
 \begin{itemize}
-  \item Re-implement the inference algorithm. We plan to investigate the efficiency of the inference algorithm, which is not presented in the paper.
-  \item Re-do the training process. The paper uses a fixed training set provided by the Image Parse dataset and the Buffy Stickman dataset. We plan to re-train the model with different settings, either using a subset or on a new dataset. The goal is to better understand how the trained model changes by different training settings. 
-  \item Build on own human dataset. We can build a small but more challenging dataset, and see how far can the target method go.
-  
+  \item Re-implement the inference algorithm, in paricular, the dymamic programming algorithm. This is a good starting point, since the authors have provided the code for learning and inference, and a fixed training and test split on the benchmark dataset. This will be helpful for us to verify the implementaion, since we can fix the trained model and focus only on the inference evaluation of the test set.
+  \item Re-implement the learning algorithm, in particular, solving the structural SVM problem using the dual coordinate descent solver. The paper uses a fixed training set provided by the Image Parse dataset \cite{Ramanan_NIPS2006}. We plan to re-train the model by changing the size of the training set. The goal is to better understand how sensitive the trained model is to the size of the training set, and whether the current training set contains enough training samples. The training code is also provided by the author, so it can be used to verify our implementation.
+  \item Build our own human dataset. We aim to build a small but more challenging dataset with more realistic images, and see how far can the target method go. This will also tell us 1) whether there is a bias in the dataset the paper evaluates on, and 2) how much gain could we get by adding new training image into the current training set.
 \end{itemize}
 
+We want to note that the authors have released their implementation for research purposes \footnote{http://www.ics.uci.edu/~yyang8/research/pose/}. This serves as a great resource for our replication study by the following reasons: 1) The information provided in the paper is insufficient from the full replcation aspect. For example, the paper describes their dual coordinate descent algorithm for learning only briefly and point to another reference. The reference does detail the algorithm better, but it could not provide some critical information in the context of the first paper such as initialization schemes, hyperparameters, and convergence criterions. Having the provided code will help us pick up the missing information. 2) The released code will provide a good amount of help (but not complete) to our debugging process. Instead of checking the whole framework due to incoherent outputs, we could compare the intermediate results to better understand what the mistakes are.
+
+\begin{figure*}[t]
+  \begin{center}
+    %\begin{tabular}{cccccc}
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0036_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0036_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0017_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0017_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0086_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0086_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0029_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0029_2.pdf}\\
+%      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0097_1.pdf}~~%&
+%      \includegraphics[height=0.133\linewidth]{figure/parse/00_img0097_2.pdf}\\
+      \vspace{0.2cm}
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0036_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0036_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0017_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0017_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0086_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0086_2.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0029_1.pdf}~~%&
+      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0029_2.pdf}\\
+%      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0097_1.pdf}~~%&
+%      \includegraphics[height=0.133\linewidth]{figure/parse/01_img0097_2.pdf}\\
+    %\end{tabular}
+  \end{center}
+  \caption{Qualitative samples of the inference replication on the Parse dataset. The pre-trained model is composed of 26 human parts. Each human detection is visualized by the detected bounding boxes of parts (left) and the skeletons (right). The top row show the result obtain from the author's implementation. The bottom row shows our implementation. Our implementation performs comparable to the authors' globally while there are local errors occasionally.}
+  \label{fig:inference_exp}
+\end{figure*}
+
+
 \section{Inference}
-We first briefly review the overall pictorial structure model for human detection proposed in \cite{Yang_PAMI2011} and the inference problem in Sec. \ref{sec:inference_ov}. Next we evaluate our implementation of the inference algorithm on the the Image Parse data \cite{Ramanan_NIPS2006} in Sec. \ref{sec:inference_eval}.
+We first briefly review the overall pictorial structure model for human detection proposed in \cite{Yang_PAMI2011} and the inference problem in Sec. \ref{sec:inference_ov}. Next we evaluate our implementation of the inference algorithm on the the Image Parse dataset \cite{Ramanan_NIPS2006} in Sec. \ref{sec:inference_eval}.
 
 \subsection{Algorithm Overview}
 \label{sec:inference_ov}
-Yang \emph{et al.} proposed a pictorial structure representation to robustly model the human poses caused by articulated body configurations. They have a flexible design in the way that each local part is a mixture of different component (i.e. can be chosen from a template set). Let $I$ denote the image, $l_i = (x_i, y_i)$ be the location of part $i$, and $t_i$ be the mixture component of part $i$ (using the $t_i$th template for part $i$), where $i\in \{1,\dots,K\}$, $l_i\in\{1,\dots,L\}$, and $t_i\in\{1,\dots,T\}$. Assuming the human body is a tree structured graph $G=(V,E)$, the score function of a human is defined as following:
+Yang and Ramanan proposed a pictorial structure representation to robustly model the human poses caused by articulated body configurations. They have a flexible design in the way that each local part is a mixture of different component (i.e. can be chosen from a template set). Let $I$ denote the image, $l_i = (x_i, y_i)$ be the location of part $i$, and $t_i$ be the mixture component of part $i$ (using the $t_i$th template for part $i$), where $i\in \{1,\dots,K\}$, $l_i\in\{1,\dots,L\}$, and $t_i\in\{1,\dots,T\}$. Assuming the human body is a tree structured graph $G=(V,E)$, the score function of a human is defined as following:
 \begin{equation}
 \label{eq:model}
   S(I,l,t) = \sum_{i\in V}\omega_i^{t_i}\cdot\phi(I,l_i) + \sum_{i,j\in E}\omega_{ij}^{t_i,t_j}\cdot\psi(l_i-l_j) + S(t).
@@ -128,120 +178,283 @@ Given the model parameter, inference correspends to finding the maximum scoring 
     \text{where~~~~} & \phi_i(I,z_i) = \omega_i^{t_i}\cdot\phi(I,l_i)+b_i^{t_i} \\
                    & \psi_{ij}(z_i,z_j) = \omega_{ij}^{t_i,t_j}\cdot\psi(l_i-l_j)+b_{ij}^{t_i,t_j} \\
   \end{split}
+  \label{eq:score}
 \end{equation}
-One nice consequence of the tree structure assumption on human body representation is enabling us to solve the optimization problem efficiently by dynamic programming.	Our first focus of this replication study is on re-implementing this inference algorithm.
+One nice consequence of the tree structure assumption on human body representation is enabling us to solve the optimization problem efficiently by dynamic programming. Our first focus of this replication study is on re-implementing this inference algorithm.
 
-\subsection{Evaluation}
+\subsection{Replication Result}
 \label{sec:inference_eval}
-We verify our implementation by first comparing the result on the same benchmark dataset, Image Parse Dataset \cite{Ramanan_NIPS2006}. The dataset consists of 100 training images and 205 test images. Since we only want to verify our inference implementation, we use only the test images for experiment. As \cite{Ramanan_NIPS2006}, we evaluate the result using two different metrics: 1) probability of a correct keypoint (PCK), and 2) average precision of keypoints (APK). The comparison between our implementation and the original paper is reported in Table \ref{tab:pck_parse} and \ref{tab:apk_parse}. Note that the authors have made their code public online. Since we observe a difference in the result obtained by running their released code and the number they reported in \cite{Ramanan_NIPS2006}, we use the numbers obtained by their release code for comparison here.
-
-For the quantitative evaluation, we observe a significant gap between our implementation and the author's implementation. This indicates that our implementation of inference clearly still contain mistakes. We also showed the qualitative examples for detected human in Fig. \ref{fig:inference_exp}. Looking through the example image, we see that the implementation actually works in a reasonbly good level. This suggests that the mistake might be minor. A good strategy for debugging the implementation will be comparing with the author's code by fixing the module of the algorithm one at a time. We plan to carry out that as our next step.
-
-%\begin{algorithm}
-%  \dontprintsemicolon
-%  \KwInput{a}
-%  \KwOutput{a}
-%  \Begin{
-%    $V \longleftarrow U$\;
-%    $S \longleftarrow \emptyset$\;
-%    \For{$x\in X$}{
-%      $NbSuccInS(x) \longleftarrow 0$\;
-%      $NbPredInMin(x) \longleftarrow 0$\;
-%      $NbPredNotInMin(x) \longleftarrow |ImPred(x)|$\;
-%    }
-%    \For{$x \in X$}{
-%      \If{$NbPredInMin(x) = 0$ {\bf and} $NbPredNotInMin(x) = 0$}{
-%        $AppendToMin(x)$}
-%    }
-%    \While{$S \neq \emptyset$}{
-%      \While{$|S \cap ImSucc(x)| \neq |S|$}{
-%        \For{$ y \in S-ImSucc(x)$}{
-%          \{ remove from $V$ all the arcs $zy$ : \}\;
-%          \For{$z \in ImPred(y) \cap Min$}{
-%            remove the arc $zy$ from $V$\;
-%            $NbSuccInS(z) \longleftarrow NbSuccInS(z) - 1$\;
-%            move $z$ in $T$ to the list preceding its present list\;
-%            \{i.e. If $z \in T[k]$, move $z$ from $T[k]$ to
-%            $T[k-1]$\}\;
-%          }
-%          $NbPredInMin(y) \longleftarrow 0$\;
-%          $NbPredNotInMin(y) \longleftarrow 0$\;
-%          $S \longleftarrow S - \{y\}$\;
-%          $AppendToMin(y)$\;
-%        }
-%      }
-%    $RemoveFromMin(x)$\;
-%    }
-%  }
-%\caption{}
-%\end{algorithm}
-
-\begin{table}[t]
-  \begin{center}
-    \begin{tabular}{|p{0.8cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
-      \hline
-      Parse                & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
-      \hline
-      \cite{Yang_PAMI2011} & 88.3 & 82.7 & 61.2 & 44.1 & 68.8 & 66.8 & 61.0 & 67.6 \\ \hline
-      Mine                 & 77.3 & 71.2 & 47.3 & 31.7 & 58.8 & 56.8 & 49.3 & 56.1 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Probability of correct keypoints (PCK) on the Image Parse Dataset.}
-  \label{tab:pck_parse}
-\end{table}
+We verify our implementation by first comparing the result on the same benchmark dataset, the Image Parse dataset \cite{Ramanan_NIPS2006}. The dataset consists of 100 training images and 205 test images. Since we only want to verify our inference implementation, we fix the trained model and use only the test images for evaluation. As \cite{Ramanan_NIPS2006} suggests, we evaluate the result based on the accuracy of body joint localization. We follow the paper and use two different metrics to measure such accuracy: 1) probability of a correct keypoint (PCK), and 2) average precision of keypoints (APK). Note that for PCK, the detector is ran within the annotated bounding box of the person. This metric highlights how well the body joints are localized given the ground-truth human bounding boxes. 
 
 \begin{table}
   \begin{center}
     \begin{tabular}{|p{0.8cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
       \hline
-      Parse                & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
+                              	 & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
       \hline
-      \cite{Yang_PAMI2011} & 83.9 & 77.0 & 49.6 & 26.8 & 56.1 & 52.3 & 43.7 & 55.6 \\ \hline
-      Mine                 & 71.2 & 62.8 & 32.4 & 15.8 & 42.9 & 38.8 & 33.1 & 42.4 \\ \hline
+      \cite{Yang_PAMI2011} 	 & 88.3 & 81.7 & 62.2 & 42.0 & 71.0 & 68.5 & 61.2 & 67.8 \\ \hline
+      Ours                    	 & 78.0 & 70.0 & 40.5 & 28.3 & 58.8 & 56.3 & 52.4 & 54.9 \\ \hline
     \end{tabular}
+    \caption*{(a) Probability of correct keypoints (PCK)}
+    \bigskip
+    \begin{tabular}{|p{0.8cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+      \hline
+      	                      	 & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
+      \hline
+      \cite{Yang_PAMI2011} 	 & 83.9 & 77.6 & 45.7 & 24.2 & 60.4 & 53.8 & 46.5 & 56.0 \\ \hline
+      Ours                   	 & 69.3 & 60.7 & 24.5 & 10.4 & 42.3 & 36.6 & 33.6 & 39.6 \\ \hline
+    \end{tabular}
+    \caption*{(b) Average precision of keypoints (APK)}
   \end{center}
-  \caption{Average precision of keypoints (APK) on the Image Parse Dataset.}
-  \label{tab:apk_parse}
+  \caption{We compare the inference result between the paper's implementation \cite{Yang_PAMI2011} and our implementation (Ours). The trained model is fixed to be the same. There is a accuracy drop in our implementation compared to the authors'.}
+  \label{tab:parse_inf}
 \end{table}
 
-\begin{figure*}[b!]
+\begin{figure*}[t]
   \begin{center}
     %\begin{tabular}{cccccc}
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0003_1.pdf}~~%&
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0003_2.pdf}~~%&
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0005_1.pdf}~~%&
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0005_2.pdf}~~%&
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0037_1.pdf}~~%&
-      \includegraphics[height=0.164\linewidth]{figure/inference_example/img0037_2.pdf}~~\\
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0011_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0011_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0098_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0098_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0156_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0156_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0163_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/00_img0163_2.pdf}\\
       \vspace{0.2cm}
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0016_1.pdf}~~%&
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0016_2.pdf}~~%&
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0149_1.pdf}~~%&
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0149_2.pdf}~~%&
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0175_1.pdf}~~%&
-      \includegraphics[height=0.144\linewidth]{figure/inference_example/img0175_2.pdf}\\
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0011_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0011_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0098_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0098_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0156_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0156_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0163_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/20_img0163_2.pdf}\\
       \vspace{0.2cm}
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0002_1.pdf}~~%&
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0002_2.pdf}~~~%&
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0010_1.pdf}~~%&
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0010_2.pdf}~~~%&
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0013_1.pdf}~~%&
-      \includegraphics[height=0.147\linewidth]{figure/inference_example/img0013_2.pdf}\\%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0011_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0011_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0098_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0098_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0156_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0156_2.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0163_1.pdf}~~%&
+      \includegraphics[height=0.123\linewidth]{figure/parse/21_img0163_2.pdf}\\
     %\end{tabular}
   \end{center}
-  \caption{Replication results on the Parse dataset. The pre-trained model is composed of 26 human parts. Each human detection is visualized by the detected bounding boxes of parts (left) and the skeletons (right). The first two rows show the correct detected human poses. The last row shows failure examples. The failure can be caused by 1) false alarming parts with high score, 2) double counting, and 3) exceptional pose configurations.}
-  \label{fig:inference_exp}
+  \caption{Qualitative examples of the learning replication on the Parse dataset. The first row is using the authors' implementation for both learning and inference. The second row is using our implementation for learning and the authors' implementation for inference. The third row is using our implementation for both learning and inference. We obtain comparable results on learning when using the same inference implementation.}
+  \label{fig:learning_exp}
 \end{figure*}
 
+We start by comparing our implementation and the implementation provided by the authors \footnote{Note that there is a slight difference between the result reported in the paper and the result we obtain from their code. We decide to use the output of the code for all the comparision in this study}. For the quantitative evaluation, we observe a significant drop (over $10\%$) in our implementation compared to the authors' implementation. We also show some qualitative examples in \ref{fig:inference_exp}, where the top rows are the results of the authors' implementation, while the bottom rows are ours. There are occationally errors in only a local part of the detection, for instance, the right arm on the leftmost image, and very few cases where there are global errors, for instance, the second left image. Since in general our implementation works in a reasonable level from a qualitative perspect, it suggests that the cause of the gap between our result and the original paper is less likely to be on the algorithmic side. Unfortunately, the question remains at the due of this report. We suggest a few possible explains on the result difference: 1) There could be a bug caused by a typo in our implementation, and it has a local affect which does not reflect significantly in the global detection result. 2) There could possibly be a numerical issue on the computation, which suggests that the implementation is not numerically stable. From the debugging experience, we learned that the debugging can still be difficult and time-consuming even the original code is available.
 
-\section{Training}
-In progress. Aim to finish before 03.18.
+%\begin{table}[t]
+%  \begin{center}
+%    \begin{tabular}{|p{0.8cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+%      \hline
+%      Parse                & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
+%      \hline
+%      \cite{Yang_PAMI2011} & 88.3 & 82.7 & 61.2 & 44.1 & 68.8 & 66.8 & 61.0 & 67.6 \\ \hline
+%      Mine                 & 77.3 & 71.2 & 47.3 & 31.7 & 58.8 & 56.8 & 49.3 & 56.1 \\ \hline
+%    \end{tabular}
+%  \end{center}
+%  \caption{Probability of correct keypoints (PCK) on the Image Parse Dataset.}
+%  \label{tab:pck_parse}
+%\end{table}
+
+%\begin{table}
+%  \begin{center}
+%    \begin{tabular}{|p{0.8cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+%      \hline
+%      Parse                & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
+%      \hline
+%      \cite{Yang_PAMI2011} & 83.9 & 77.0 & 49.6 & 26.8 & 56.1 & 52.3 & 43.7 & 55.6 \\ \hline
+%      Mine                 & 71.2 & 62.8 & 32.4 & 15.8 & 42.9 & 38.8 & 33.1 & 42.4 \\ \hline
+%    \end{tabular}
+%  \end{center}
+%  \caption{Average precision of keypoints (APK) on the Image Parse Dataset.}
+%  \label{tab:apk_parse}
+%\end{table}
+
+%\section{Target Questions}
+%{\color{blue}
+%\begin{enumerate}
+%  \item Why is your target paper important enough for the effort of replication?
+%  \item How will your replication benefit the state of the art?  Will this increase (or decrease) our confidence in a method that can advance the state of the art?  Did their paper and their other resources provide the information you needed to do a replication.
+%  \item What did you actually have to do, to get the replication working?  Did you replicate the entire work? Did you extend their work?
+%  \item How did you evaluate what you did?  How do you know how well your replication worked?
+%  \item What is the significance of your results, in terms of the confidence we can have in the results of the target article and in its authors?  Does your replication help advance the state of the art?  Are there new insights into the original article's problem or its solution, that you got from your replication effort and that would be valuable to the reader?
+%\end{enumerate}
+%}
+
+
+\section{Learning}
+The goal is to learn the model parameters in \ref{eq:score} that maximizes the discrimination power. The paper formulates a structural SVM learning problem and solves it using an efficient algorithm based on dual coordinate descent (DCD). The primary focus of our replication study is to re-implement the dual coordinate descent solver. We first review the learning problem and the DCD solver in Sec \ref{sec:learning_ov}. The replication result is presented in Sec \ref{sec:learning_rep}. 
+
+\subsection{Algorithm Overview}
+\label{sec:learning_ov}
+The paper adopts a supervised learning paradign. Given labeled positive examples $\{I_n,l_n,t_n\}$ (images with labeled human body parts) and negative examples $\{I_n\}$, the goal is to learn a discriminative model that will score high on test regions when a person is presented and score low otherwise. Since the score function \ref{eq:score} is linear in model parameters $\beta=(\omega,b)$, we can write $S(I,z)=\beta\cdot\Phi(I,z)$. The model parameters is then learnt by solving the following optimization problem:
+\begin{equation}
+  \begin{split}
+    \arg\min_{\beta,\xi_n\geq0}                      ~~~& \frac{1}{2}||\beta||^2+C\sum_n{\xi_n} \\
+    \text{s.t.}~~ \forall n\in \text{pos}            ~~~& \beta^{T}\Phi(I_n,z_n) \geq 1-\xi_n \\
+                  \forall n\in \text{neg}, \forall z ~~~& \beta^{T}\Phi(I_n,z) \leq -1+\xi_n,
+  \end{split}
+\label{eq:ssvm}
+\end{equation}
+where $C$ is the hyperparameter and $\xi_n$ is the slack variable corresponded to sample $n$.
+
+The form of the learning problem above is known as a structural SVM (SSVM), an extension of the binary SVM to handle the prediction of structured outputs. There has been many powerful techniques proposed to solve the SSVM problem, for instance, the cutting plane algorithm and the stochastic gradient descent (SGD). This paper uses a {\it dual coordinate descent } solver, which is detailed in \cite{Ramanan_TR2012} by one of the co-authors. As \cite{Ramanan_TR2012} mentioned, in large scale learning problems, batch algorithms are often impractical due to the difficulty of fitting the entire dataset into the memory, while the online algorithms alleviate such problem but often converge slowly. The proposed dual coordinate descent solver serves as an intermediate solution: it keeps a relatively small set of active constraints (support vectors) in the memory, which leads to a better performance on the convergence, while keeping it as stable as the batch algorithms.
+
+The proposed dual coordinate descent solver has many practical advantages in large scale learning problems, and it could potentially be benefitial to our later research studies. Thus we decide to focus primarily on implementing the proposed DCD algorithm for the training part of this replication study. 
+
+\begin{table}
+  \begin{adjustwidth}{-0.3cm}{}
+  \begin{center}
+    \begin{tabular}{|p{1.1cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+      \hline
+      	                	                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
+      \hline
+      \cite{Yang_PAMI2011} / \cite{Yang_PAMI2011} 	 & 88.3 & 81.7 & 62.2 & 42.0 & 71.0 & 68.5 & 61.2 & 67.8 \\ \hline
+      O / \cite{Yang_PAMI2011}			  	 & 87.3 & 79.8 & 58.8 & 43.7 & 70.0 & 63.9 & 58.3 & 66.0 \\ \hline
+      O / O			 		 	 & 79.0 & 71.7 & 40.7 & 30.0 & 57.8 & 58.3 & 54.1 & 56.0 \\ \hline
+    \end{tabular}
+    \caption*{Probability of correct keypoints (PCK).}
+    \bigskip
+    \begin{tabular}{|p{1.1cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+      \hline
+                                                    	 & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
+      \hline
+      \cite{Yang_PAMI2011} / \cite{Yang_PAMI2011} 	 & 83.9 & 77.6 & 45.7 & 24.2 & 60.4 & 53.8 & 46.5 & 56.0 \\ \hline
+      O / \cite{Yang_PAMI2011}			 	 & 83.2 & 75.7 & 44.9 & 26.5 & 57.0 & 49.2 & 41.9 & 54.1 \\ \hline
+      O / O			 			 & 72.5 & 63.6 & 25.1 & 13.8 & 42.7 & 43.0 & 37.1 & 42.5 \\ \hline
+    \end{tabular}
+    \caption*{Average precision of keypoints (APK).}
+  \end{center}
+  \end{adjustwidth}
+  \caption{We compare the result of learning between the paper's implementation and our implementation. A / B represents using A for learning and B for inference (\cite{Yang_PAMI2011} for the paper and O for Ours). We achive comparable results on learning when using the same inference implementation. Our inference implementation causes a performance drop as in Tab. \ref{tab:parse_inf}.}
+  \label{tab:parse_learn}
+\end{table}
+
+Now we highlight the idea of the proposed DCD solver (refer to \cite{Ramanan_TR2012} for the complete details). The optimization problem \ref{eq:ssvm} is a quadratic programming (QP), and we can derive the associated Lagrangian:
+\begin{equation}
+  \begin{split}
+  L(\beta,\xi,\alpha,\mu) = & \frac{1}{2}||\beta||^2+C\sum_i\xi_i-\sum_{ij}\alpha_{ij}(\beta^{T}\Phi-1+\xi_i) \\
+                            & -\sum_{i}\mu_i\xi_i,
+  \end{split}
+\end{equation}
+where $\alpha$ and $\mu$ are the Lagrange multipliers. We can take the derivatives of the Lagragian with respect to the primal variables, and get the dual of the QP in \ref{eq:ssvm}:
+\begin{equation}
+  \begin{split}
+  \max_{\alpha\geq0,\mu\geq0} ~~~F(\alpha) = - & \frac{1}{2}\sum_{ij,kl}\alpha_{ij}x^{T}_{ij}x_{kl}\alpha_{kl}+\sum_{ij}\alpha_{ij} \\
+  \text{s.t.}~~ \forall i, ~~~& \sum_{j}\alpha_{ij}\leq 1 \\
+  %\forall i,j,             ~~~&\alpha_{ij}\geq 0.
+  \end{split}
+\label{eq:dual}
+\end{equation}
+By strong dualality, the solution of problem \ref{eq:ssvm} (primal) and problem \ref{eq:dual} (dual) are equivalent. One important property about \ref{eq:dual} is that when we minimize the objective with respect to a single $\alpha_{ij}$ while keeping other fixed, the objective function is quadratic over $\alpha_i$, and there exists an analytical solution. The efficiency of the proposed DCD algorithm is thus based on this fact. We randomly pick a single $\alpha_{ij}$ and optimize \ref{eq:dual}, and this will garuantee to increase the object function. It is also shown in \cite{Ramanan_TR2012} that the lower-bound and an approximated upper-bound can be tracked efficiently during the run of the optimization. We can determine the convergence of the learning when the gap between the upper-bound and the lower-bound is below a fixed threshold.
+
+\begin{figure}[t]
+  \center
+  \includegraphics[width=0.90\linewidth]{figure/train_num.pdf}
+  \caption{Evaluation on Parse test set using different number of training images.}
+  \label{fig:train_num}
+\end{figure}
+
+\subsection{Replication Result}
+\label{sec:learning_rep}
+
+We use the standard training and test split for the Image Parse dataset. We compare the result obtained by 1) using the authors' implementation for both learning and inference, 2) using our implementation for learning and the authors' implementation for inference, and 3) use our implementation for both learning and training. We report the body joint localization accuracies and qualitative examples in Tab. \ref{tab:parse_inf} and Fig. \ref{fig:inference_exp}, respectively. As shown in Tab. \ref{tab:parse_inf}, we obtain comparable result with the authors' implementation when the inference choice is fixed. This indicates a success in the replication on the learning side, since our implementation performs comparable to the authors' implementation. However, we still see an accuracy drop when applying our inference implementation. This is expected from the result in Sec \ref{sec:inference_eval}. We note that the success of the replication is contributed significantly from the availability of the paper's code. The code provides large amount of additional information to the paper, especially on the learning side, such as the initialization scheme, loading control of data sequence, and hyperparameters.
+
+We also investigate the affect of the size of the training set on the Parse dataet. We change the number of number of training images by randomly picking a subset of the original training set, and run the test experiment on the test set. The results on PCK and APK are shown in Fig. \ref{fig:train_num}. We observe that the accuracy converges around using 80 training images. The reason could be that the Parse dataset is relatively small and the statistics of the training and test set are similar. Therefore, using a small amount of training images can reach the upper bound of the test accuracy. As we will shown in Sec \ref{sec:newdata}, the statistics of the Parse dataset is very different from the general images we take everyday. To increase the generalization power of the trained model, we need to add the training images from different sources to balance the statistics of the dataset, in order to increase the generalization power.
+
+\begin{figure}[t]
+  \center
+  \includegraphics[width=0.9\linewidth]{figure/newdata.jpg}
+  \caption{Our proposed new dataset. It contains 70 images taken from our daily life.}
+  \label{fig:newdata}
+\end{figure}
 
 \section{New Dataset}
-In progress. Aim to finish before 04.08.
+\label{sec:newdata}
 
-\section{Milestone}
-\label{}
+To better understand the result on the parse dataset, as well as to gain more insights on the generalization of the trained model, we propose a new dataset for further evaluations. As shown in Fig. \ref{fig:newdata}, this dataset contains 70 images which mostly came from the photos we took in our past daily life. Compared to the images in the Parse dataset, which are carefully selected for evaluation purposes, our new dataset are more common and realistic. We annotate the human body joints for the new dataset in the same way as the parse dataset. 
+
+\begin{table}[t]
+  \begin{center}
+    \begin{tabular}{|p{1.1cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+      \hline
+      		            	                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
+      \hline
+      \cite{Yang_PAMI2011} / \cite{Yang_PAMI2011} 	 & 67.9 & 47.9 & 29.3 & 20.7 & 33.6 & 31.4 & 30.0 & 37.2 \\ \hline
+      \cite{Yang_PAMI2011} / O                   	 & 60.0 & 39.3 & 17.9 & 19.3 & 25.0 & 25.7 & 30.7 & 31.1 \\ \hline
+      O / \cite{Yang_PAMI2011}			 	 & 67.9 & 51.4 & 22.9 & 18.6 & 34.3 & 30.7 & 31.4 & 36.7 \\ \hline
+      O / O			 		 	 & 57.9 & 38.6 & 20.7 & 15.0 & 24.3 & 27.1 & 32.1 & 30.8 \\ \hline
+    \end{tabular}
+    \caption*{Probability of correct keypoints (PCK).}
+    \bigskip
+    \begin{tabular}{|p{1.1cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
+      \hline
+      		                                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
+      \hline
+      \cite{Yang_PAMI2011} / \cite{Yang_PAMI2011}	 & 54.8 & 35.0 & 19.4 & 10.5 & 22.0 & 15.7 & 19.1 & 25.2 \\ \hline
+      \cite{Yang_PAMI2011} / O                   	 & 46.2 & 29.0 &  9.6 &  6.5 & 19.8 & 15.0 & 17.3 & 20.5 \\ \hline
+      O / \cite{Yang_PAMI2011}			 	 & 49.6 & 34.5 & 15.7 &  7.6 & 22.8 & 13.9 & 18.0 & 23.2 \\ \hline
+      O / O			 			 & 47.9 & 32.3 &  8.0 &  4.5 & 15.1 & 14.6 & 19.6 & 20.3 \\ \hline
+    \end{tabular}
+    \caption*{Average precision of keypoints (APK).}
+  \end{center}
+  \caption{The inference result on the new dataset using the model trainined on the Parse dataset. The result of different implemention choices are reported. A / B represents using A for learning and B for inference (\cite{Yang_PAMI2011} for the paper and O for Ours). The performance drops significantly compared to the Parse test set.}
+  \label{tab:newdata_acc}
+\end{table} 
+
+\begin{figure*}[t]
+  \begin{center}
+    %\begin{tabular}{cccccc}
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0017_1.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0017_2.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0023_1.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0023_2.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0063_1.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0063_2.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0058_1.pdf}~~%&
+      \includegraphics[height=0.117\linewidth]{figure/new_dataset/img0058_2.pdf}\\
+      \vspace{0.2cm}
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0018_1.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0018_2.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0010_1.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0010_2.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0035_1.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0035_2.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0014_1.pdf}~~%&
+      \includegraphics[height=0.111\linewidth]{figure/new_dataset/img0014_2.pdf}\\
+    %\end{tabular}
+  \end{center}
+  \caption{Qualitative examples on the new dataset using the model trainined on the Parse dataset.}
+  \label{fig:newdata_exp}
+\end{figure*}
+
+To see how well the model trained on the Parse dataset generalizes to images from a different source, we take our trained model from Sec \ref{sec:learning_rep} and run inference on the new dataset. The accuracies of body part localization (PCK and APK) are shown in Table \ref{tab:newdata_acc}. In addition to the same drop of performance for our inference implementation, the overall accuracies drops significantly compare to the evaluation on the Parse dataset (Table \ref{tab:parse_inf} and \ref{tab:parse_learn}). This indicates there is a bias between the Parse dataset and our new dataset. We point out four major issues that explains the accuracy drop on the new dataset as follows. 1) {\bf Poses:} Most images in the Parse dataset are people playing sports, e.g. basketball, baseball, tennis, etc. This causes a bias in the pose distribution. For example, the model learnt from the Parse dataset can not identify the squating pose shown in the lower left image in Fig \ref{fig:newdata_exp} because of lacking similar training examples. 2) {\bf Focus of Image:} People are often the dominant objects of the images in the Parse dataset. This is not necessarily true for general images, as seen in Fig \ref{fig:newdata_exp}. The problem becomes significant when the scale of the person is too small such that the extracted feature can not discriminate difference poses. 3) {\bf Occlusion:} Images in Parse have been selected to limit the amount of occlusions and self-occlusions. The limbs can be observed most of the time possibly due to the performed activity (sports). However, in a more realisitic scenario, human in an image suffers more from occlusions and self-occlusions. In many cases, half of the body may not be visible at all. Unfortunately the proposed method are not capable of handling these cases yet. 4) {\bf Noisy Background:} The background of the human can be very cluttered in realistic images. The problem is even significant when the people are less dominant in the image. As shown in the lower right image of Fig \ref{fig:newdata_exp}, noisy background can cause false positives due to the noisy image features. From the analysis above, we conclude that there is still a gap between the Parse dataset and realistic images, and the later is still very challenging for several reasons that may cause the proposed method to fail.
+
+\section{Conclusion}
+In this replication study, we have re-implemented the inference algorithm and the learning algorithm. The replication of learning is successful, while the replication of inference still requires verfication. We show some analysis on how training on the Parse dataset is affected by the size of the training set. We also perform extensive studies on the generalizaion of the trained model by testing it on a new proposed dataset. We conclude that due to the large variability of human body poses, as well as different sources of noises in the real-world images, a large amount of training images is required to successfully increase the generalization power of the proposed method.
+
+\begin{figure}[t]
+  \begin{center}
+    %\begin{tabular}{cccccc}
+      \includegraphics[height=0.43\linewidth]{figure/anecdotal/img0002_2.pdf}~~%&
+      \includegraphics[height=0.43\linewidth]{figure/anecdotal/img0003_2.pdf}~~%&
+      \includegraphics[height=0.43\linewidth]{figure/anecdotal/img0005_2.pdf}\\
+      \vspace{0.2cm}
+      \includegraphics[height=0.32\linewidth]{figure/anecdotal/img0006_2.pdf}~~%&
+      \includegraphics[height=0.32\linewidth]{figure/anecdotal/img0007_2.pdf}\\
+    %\end{tabular}
+  \end{center}
+  \caption{Anecdotal examples on non-human (or fake human) images.}
+  \label{fig:newdata_anec}
+\end{figure}
+
+%\section{Milestone}
+%\label{}
 
 %\begin{figure*}[t]
 %  \centering
@@ -250,99 +463,32 @@ In progress. Aim to finish before 04.08.
 %\label{}
 %\end{figure*}
 
-The milestones are shown in Table \ref{tab:6}
-\begin{table}[t]
-  \centering
-  \begin{tabular}{|l|p{5.5 cm}|}
-    \hline
-    Date          & Plan \\
-    \hline
-    02.05 - 02.11 & re-implement the inference algorithm \\
-    02.12 - 02.18 & re-implement the inference algorithm \\
-    02.19 - 02.25 & re-implement the inference algorithm \\
-                  & compare the result with the paper \\
-                  & analyze the result \\
-    02.25 - 03.04 & re-do training \\
-    03.05 - 03.11 & re-do training \\
-    03.12 - 03.18 & collect new dataset \\
-    03.19 - 03.25 & collect new dataset \\
-    03.26 - 04.01 & run experiment on new dataset \\
-    04.02 - 04.08 & run experiment on new dataset \\
-    04.09 - 04.15 & Buffer time \\
-    04.16 - 04.21 & Prepare for presentation \\
-    \hline
-  \end{tabular}
-  \caption{Project milestones}
-  \label{tab:6}
-\end{table}
+%The milestones are shown in Table \ref{tab:6}
+%\begin{table}[t]
+%  \centering
+%  \begin{tabular}{|l|p{5.5 cm}|}
+%    \hline
+%    Date          & Plan \\
+%    \hline
+%    02.05 - 02.11 & re-implement the inference algorithm \\
+%    02.12 - 02.18 & re-implement the inference algorithm \\
+%    02.19 - 02.25 & re-implement the inference algorithm \\
+%                  & compare the result with the paper \\
+%                  & analyze the result \\
+%    02.25 - 03.04 & re-do training \\
+%    03.05 - 03.11 & re-do training \\
+%    03.12 - 03.18 & collect new dataset \\
+%    03.19 - 03.25 & collect new dataset \\
+%    03.26 - 04.01 & run experiment on new dataset \\
+%    04.02 - 04.08 & run experiment on new dataset \\
+%    04.09 - 04.15 & Buffer time \\
+%    04.16 - 04.21 & Prepare for presentation \\
+%    \hline
+%  \end{tabular}
+%  \caption{Project milestones}
+%  \label{tab:6}
+%\end{table}
 
-\begin{table*}[t]
-  \begin{center}
-    \begin{tabular}{|p{2.2cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
-      \hline
-      Parse                	                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
-      \hline
-      \cite{Yang_PAMI2011} Tr + \cite{Yang_PAMI2011} Inf & 88.3 & 81.7 & 62.2 & 42.0 & 71.0 & 68.5 & 61.2 & 67.8 \\ \hline
-      \cite{Yang_PAMI2011} Tr + My Inf                   & 78.0 & 70.0 & 40.5 & 28.3 & 58.8 & 56.3 & 52.4 & 54.9 \\ \hline
-      \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 87.3 & 79.8 & 58.8 & 43.7 & 70.0 & 63.9 & 58.3 & 66.0 \\ \hline
-      My Tr + My Inf			 		 & 79.0 & 71.7 & 40.7 & 30.0 & 57.8 & 58.3 & 54.1 & 56.0 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Probability of correct keypoints (PCK).}
-  %\label{tab:pck_parse}
-\end{table*}
-
-\begin{table*}
-  \begin{center}
-    \begin{tabular}{|p{2.2cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
-      \hline
-      Parse                                              & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
-      \hline
-      \cite{Yang_PAMI2011} Tr + \cite{Yang_PAMI2011} Inf & 83.9 & 77.6 & 45.7 & 24.2 & 60.4 & 53.8 & 46.5 & 56.0 \\ \hline
-      \cite{Yang_PAMI2011} Tr + My Inf                   & 69.3 & 60.7 & 24.5 & 10.4 & 42.3 & 36.6 & 33.6 & 39.6 \\ \hline
-      \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 83.2 & 75.7 & 44.9 & 26.5 & 57.0 & 49.2 & 41.9 & 54.1 \\ \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 72.5 & 63.6 & 25.1 & 13.8 & 42.7 & 43.0 & 37.1 & 42.5 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Average precision of keypoints (APK).}
-  %\label{tab:apk_parse}
-\end{table*}
-
-
-
-\begin{table*}[t]
-  \begin{center}
-    \begin{tabular}{|p{2.2cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
-      \hline
-      		            	                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg  \\ \hline
-      \hline
-      \cite{Yang_PAMI2011} Tr + \cite{Yang_PAMI2011} Inf & 67.9 & 47.9 & 29.3 & 20.7 & 33.6 & 31.4 & 30.0 & 37.2 \\ \hline
-      \cite{Yang_PAMI2011} Tr + My Inf                   & 60.0 & 39.3 & 17.9 & 19.3 & 25.0 & 25.7 & 30.7 & 31.1 \\ \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 67.9 & 51.4 & 22.9 & 18.6 & 34.3 & 30.7 & 31.4 & 36.7 \\ \hline
-      My Tr + My Inf			 		 & 57.9 & 38.6 & 20.7 & 15.0 & 24.3 & 27.1 & 32.1 & 30.8 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Probability of correct keypoints (PCK).}
-  %\label{tab:pck_parse}
-\end{table*} 
-
-\begin{table*}
-  \begin{center}
-    \begin{tabular}{|p{2.2cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}||p{0.5cm}|}
-      \hline
-      		                                         & Hea  & Sho  & Elb  & Wri  & Hip  & Kne  & Ank  & Avg \\ \hline
-      \hline
-      \cite{Yang_PAMI2011} Tr + \cite{Yang_PAMI2011} Inf & 54.8 & 35.0 & 19.4 & 10.5 & 22.0 & 15.7 & 19.1 & 25.2 \\ \hline
-      \cite{Yang_PAMI2011} Tr + My Inf                   & 46.2 & 29.0 &  9.6 &  6.5 & 19.8 & 15.0 & 17.3 & 20.5 \\ \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 49.6 & 34.5 & 15.7 &  7.6 & 22.8 & 13.9 & 18.0 & 23.2 \\ \hline
-      My Tr + \cite{Yang_PAMI2011} Inf			 & 47.9 & 32.3 &  8.0 &  4.5 & 15.1 & 14.6 & 19.6 & 20.3 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Average precision of keypoints (APK).}
-  %\label{tab:apk_parse}
-\end{table*}
 %%%%%%%%% ABSTRACT
 %\begin{abstract}
 %   The ABSTRACT is to be in fully-justified italicized text, at the top
