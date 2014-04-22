@@ -1,8 +1,10 @@
 function model = trainmodel( name, pos, neg, K, pa, sbin, toption )
 % toption
-%   0: pre-trained model
-%   1: original training
-%   2: new training
+%   0:  pre-trained model
+%   1:  original training
+%   2:  new training
+%   11: original training on new dataset
+%   12: new training on new dataset
 
 if toption == 0
     load('20120515-pose-release-ver1.3/code-basic/PARSE_model.mat');
@@ -62,17 +64,17 @@ catch
         end
     end
     switch toption
-        case 1
+        case {1,11,13}
             % original training
             model = train(cls,model,pos,neg,0,1);
-        case 2
+        case {2,12,14,7,8}
             % new training
             model = train_ywc(cls,model,pos,neg,0,1);
     end
     save([cachedir cls],'model');
 end
 
-if toption == 2
+if toption == 2 || toption == 12 || toption == 14 || toption == 7 || toption == 8
     return
 end
 
@@ -85,10 +87,10 @@ catch
         pos = rmfield(pos,'mix');
     end
     switch toption
-        case 1
+        case {1,11,13}
             % original training
             model = train(cls,model,pos,neg,0,1);
-        case 2
+        case {2,12,14,7,8}
             % new training
             model = train_ywc(cls,model,pos,neg,0,1);
     end

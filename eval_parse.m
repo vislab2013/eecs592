@@ -1,7 +1,14 @@
 clc; close all; clear;
 % setting
-toption = 2;
-ioption = 11;
+% toption
+%   PARSE:   0 1 2 7 8
+%   NEW:     11 12 
+%   COMBINE: 13 14
+% ioption
+%   PARSE:   0 1
+%   NEW:     10 11
+toption = 14;
+ioption = 0;
 poolsize = 12;
 global tname; tname = ['t' num2str(toption,'%02d') 'i' num2str(ioption,'%02d')];
 % globals;
@@ -73,8 +80,21 @@ if(1)
     %         det_dir = 'result/pretr_detect_new/';
     %         det_gt_dir = 'result/pretr_detect_gt_new/';
     % end
-    det_dir = ['result/vis_' tname '/'];
-    det_gt_dir = ['result/vis_gt_' tname '/'];
+    if toption == 0
+        if ioption == 0
+            det_dir = 'result/pretr_detect_fast/';
+            det_gt_dir = 'result/pretr_detect_gt_fast/';
+        else
+            det_dir = 'result/pretr_detect_new/';
+            det_gt_dir = 'result/pretr_detect_gt_new/';
+        end
+    else
+        det_dir = ['result/vis_' tname '/'];
+        det_gt_dir = ['result/vis_gt_' tname '/'];
+    end
+    if exist(det_dir,'dir') && exist(det_gt_dir,'dir')
+        break;
+    end
     makedir(det_dir);
     makedir(det_gt_dir);
     figure;
